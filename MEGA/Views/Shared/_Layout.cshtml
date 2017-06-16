@@ -1,45 +1,259 @@
 ﻿<!DOCTYPE html>
-<html>
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title – приложение ASP.NET</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>MEGA</title>
+    <meta name="description" content="Mega">
+    <meta name="author" content="itionika.by">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/Main/style.css")">
+
+    <!-- Skins -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/Main/css/skins/skins.css")">
+
+    <!-- Responsive Style -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/Main/css/responsive.css")">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/Main/images/favicon.png")">
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
-                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
-                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
-        </footer>
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <div class="loader"><div class="loader_html"></div></div>
+
+    <div id="wrap" class="grid_1200">
+
+        <header id="header-top">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="phone-email"><i class="fa fa-phone"></i>+375 (33) 65 44 777</div>
+                        <div class="phone-email phone-email-2"><i class="fa fa-envelope"></i>info@fotocenter.by</div>
+                    </div>
+                </div>
+            </div><!-- End container -->
+        </header><!-- End header -->
+        <header id="header">
+            <div class="container clearfix">
+                <div class="logo"><a href="index.html"><img src="@Url.Content("~/Content/Main/images/logo.png")" alt="Mega"></a></div>
+                <div class="header-search">
+                    <div class="header-search-a"><i class="fa fa-search"></i></div>
+                    <div class="header-search-form">
+                        <form method="post">
+                            <input type="text" placeholder="Поиск по сайту">
+                        </form>
+                    </div>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li class="current_page_item"><a href="">Главная</a></li>
+                        <li><a href="#fotopech">Фотопечать</a></li>
+                        <li><a href="#fotoknig">Фотокниги</a></li>
+                        <li><a href="#vypusk">Выпускные альбомы</a></li>
+                        <li><a href="#suvenir">Сувениры</a></li>
+                        <li><a href="">Услуги</a></li>
+                        <li><a href="#contact">Контакты</a></li>
+                    </ul>
+                </nav><!-- End navigation -->
+            </div><!-- End container -->
+        </header><!-- End header -->
+
+        <div class="clearfix"></div>
+        <div class="slideshow">
+            <div class="tp-banner-container">
+                <div class="tp-banner">
+                    <ul>
+                        <li data-transition="random" data-slotamount="7" data-masterspeed="1500">
+                            <!-- MAIN IMAGE -->
+                            <img src="@Url.Content("~/Content/Main/images/slideshow.png")" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                            <div class="slideshow-bg"
+                                 data-y="310"
+                                 data-x="center"
+                                 data-start="0"></div>
+                            <!-- LAYERS -->
+                            <!-- LAYER NR. 1 -->
+                            <div class="slide-h2 tp-caption randomrotate skewtoleft tp-resizeme start white"
+                                 data-y="160"
+                                 data-x="center"
+                                 data-hoffset="0"
+                                 data-start="300"
+                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                 data-speed="500"
+                                 data-easing="Power3.easeInOut"
+                                 data-endspeed="300"
+                                 style="z-index: 2">
+                                <h2>Название слайда</h2>
+                            </div>
+
+                            <!-- LAYER NR. 2 -->
+                            <div class="slide-h3 tp-caption customin white"
+                                 data-y="230"
+                                 data-x="center"
+                                 data-hoffset="0"
+                                 data-start="600"
+                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                 data-speed="500"
+                                 data-easing="Power3.easeInOut"
+                                 data-endspeed="300"
+                                 style="z-index: 2">
+                            </div>
+
+                            <!-- LAYER NR. 3 -->
+                            <div class="slide-p tp-caption black randomrotate skewtoleft tp-resizeme start"
+                                 data-x="center"
+                                 data-hoffset="0"
+                                 data-y="310"
+                                 data-speed="500"
+                                 data-start="1300"
+                                 data-easing="Power3.easeInOut"
+                                 data-splitin="none"
+                                 data-splitout="none"
+                                 data-elementdelay="0.1"
+                                 data-endelementdelay="0.1"
+                                 data-endspeed="500" style="z-index: 6;white-space: pre-line;max-width: 1170px;text-align: center;">
+                                <p class="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+
+
+
+                        </li>
+
+
+                        <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
+                            <!-- MAIN IMAGE -->
+                            <img src="@Url.Content("~/Content/Main/images/slideshow-3.png")" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                            <div class="slideshow-bg"
+                                 data-y="310"
+                                 data-x="center"
+                                 data-start="0"></div>
+                            <!-- LAYERS -->
+                            <!-- LAYER NR. 1 -->
+                            <!-- Layer NR. 2 -->
+                            <div class="slide-h2 tp-caption randomrotate skewtoleft tp-resizeme start white"
+                                 data-y="60"
+                                 data-x="center"
+                                 data-hoffset="0"
+                                 data-start="2200"
+                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                                 data-speed="500"
+                                 data-easing="Power3.easeInOut"
+                                 data-endspeed="300"
+                                 style="z-index: 2">
+                                <h2>Название слайда</h2>
+                            </div>
+
+                            <!-- Layer NR. 3 -->
+                            <div class="tp-caption color large_bg sfr start"
+                                 data-x="0"
+                                 data-y="110"
+                                 data-start="2900"
+                                 data-speed="700"
+                                 data-easing="easeOutBounce"
+                                 style="z-index: 4">
+                                Текст
+                            </div>
+
+                            <!-- Layer NR. 4 -->
+                            <div class="tp-caption color large_bg sft start"
+                                 data-x="0"
+                                 data-y="160"
+                                 data-start="3400"
+                                 data-speed="700"
+                                 data-easing="easeOutBounce"
+                                 style="z-index: 4">
+                                Текст
+                            </div>
+
+                            <!-- Layer NR. 5 -->
+                            <div class="tp-caption color large_bg sfl start"
+                                 data-x="0"
+                                 data-y="210"
+                                 data-start="3900"
+                                 data-speed="700"
+                                 data-easing="easeOutBounce"
+                                 style="z-index: 4">
+                                Текст
+                            </div>
+
+                            <!-- Layer NR. 6 -->
+                            <div class="tp-caption color large_bg sft start"
+                                 data-x="900"
+                                 data-y="110"
+                                 data-start="4400"
+                                 data-speed="700"
+                                 data-easing="easeOutBounce"
+                                 style="z-index: 4">
+                                Текст
+                            </div>
+
+                            <!-- Layer NR. 7 -->
+                            <div class="tp-caption color large_bg sfr start"
+                                 data-x="930"
+                                 data-y="160"
+                                 data-start="4900"
+                                 data-speed="700"
+                                 data-easing="easeOutBounce"
+                                 style="z-index: 4">
+                                Текст
+                            </div>
+
+                            <!-- Layer NR. 8 -->
+                            <div class="tp-caption color large_bg sft start"
+                                 data-x="985"
+                                 data-y="210"
+                                 data-start="5400"
+                                 data-speed="700"
+                                 data-easing="easeOutBounce"
+                                 style="z-index: 4">
+                                Текст
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- End tp-banner-container -->
+        </div><!-- End slideshow -->
+
+        @RenderBody()
+
+        <footer id="footer-bottom">
+            <div class="container">
+                <div class="copyrights">Copyright 2017 MEGA <a target="_blank" href="">Создание сайтов</a>  <a target="_blank" href="https://itionika.by/">ITIONIKA</a></div>
+
+            </div><!-- End container -->
+        </footer><!-- End footer-bottom -->
+
+    </div><!-- End wrap -->
+
+    <div class="go-up"><i class="fa fa-chevron-up"></i></div>
+
+    <!-- js -->
+    <script src="@Url.Content("~/Content/Main/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/html5.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.isotope.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.nicescroll.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.appear.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/count-to.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/twitter/jquery.tweet.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.inview.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.prettyPhoto.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.bxslider.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.themepunch.plugins.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/jquery.themepunch.revolution.min.js")"></script>
+    <script src="@Url.Content("~/Content/Main/js/custom.js")"></script>
+    <!-- End js -->
+
 </body>
 </html>

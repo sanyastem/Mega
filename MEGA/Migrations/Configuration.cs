@@ -7,7 +7,7 @@ namespace MEGA.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-
+    using DB;
     internal sealed class Configuration : DbMigrationsConfiguration<MEGA.Models.ApplicationDbContext>
     {
         public Configuration()

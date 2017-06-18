@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Товары";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .ui-jqgrid .ui-pg-input {
+        height: 20px !important;
+    }
+
+    .ui-jqgrid .ui-jqgrid-pager {
+        height: 40px !important;
+    }
+
+        .ui-jqgrid .ui-jqgrid-pager .ui-pg-div {
+            font-size: 14px !important;
+        }
+</style>
+<script src="~/Scripts/jquery-ui-1.10.0.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.jqGrid.min.js" type="text/javascript"></script>
+<script src="~/Scripts/i18n/grid.locale-ru.js" type="text/javascript"></script>
+<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/jquery.jqGrid/ui.jqgrid.css" rel="stylesheet" type="text/css" />
+<section id="top" class="one dark cover">
+    <div class="container">
+
+        <header>
+            <h2 class="alt">Товары</h2>
+
+        </header>
+
+        <table id="jqg"></table>
+        <div id="jpager"></div>
+        <script type="text/javascript">
+$(document).ready(function () {
+    $("#jqg").jqGrid({
+        url: '@Url.Action("GetProducts")',
+        datatype: "json",
+        colNames: ['Id', 'Товар', 'Информация','Цена','Вид товара'],
+        colModel: [
+        { name: 'Id', index: 'Id', width: 150, stype: 'text', key: true },
+        { name: 'Name', index: 'Name', width: 150, editable: true, edittype: 'text', sortable: true },
+        { name: 'Information', index: 'Information', width: 150, editable: true, edittype: 'text', sortable: true },
+        { name: 'Price', index: 'Price', width: 150, editable: true, edittype: 'text', sortable: true },
+        { name: 'Order', index: 'Order', width: 150, editable: true, edittype: 'text', sortable: true }
+        ],
+        rowNum: 10, // число отображаемых строк
+        rowList: [10, 20, 30],
+        pager: '#jpager',
+        loadonce:true, // загрузка только один раз
+        sortname: 'UserId', // сортировка по умолчанию по столбцу Id
+        sortorder: "desc", // порядок сортировки
+        caption: "Список Пользователей",
+        width:900
+});
+            $("#jqg").jqGrid('navGrid', '#jpager', {
+
+                search: true,
+                searchtext: "Поиск",
+                refresh: true,
+                add: false, // добавление
+                del: false, // удаление
+                edit: false, // редактирование
+                view: true, // просмотр записи
+                viewtext: "Смотреть",
+                viewtitle: "Выбранная запись"
+            },
+    update("edit"), // обновление
+    update("add"), // добавление
+    update("del") // удаление
+    );
+            function update(act) {
+                return {
+                    closeAfterAdd: true, // закрыть после добавления
+                    height: 250,
+                    width: 400,
+                    closeAfterEdit: true, // закрыть после редактирования
+                    reloadAfterSubmit: true, // обновление
+                    drag: true,
+                    onclickSubmit: function (params) {
+                        var list = $("#jqg");
+                        var selectedRow = list.getGridParam("selrow");
+                        rowData = list.getRowData(selectedRow);
+                        if (act === "add")
+                            params.url = '@Url.Action("CreateProducts")';
+                        else if (act === "del")
+                            params.url = '@Url.Action("DeleteProducts")';
+                        else if (act === "edit")
+                            params.url = '@Url.Action("EditProducts")';
+                    },
+                    afterSubmit: function (response, postdata) {
+                        // обновление грида
+                        $(this).jqGrid('setGridParam', { datatype: 'json' }).trigger('reloadGrid')
+                        return [true, "", 0]
+                    }
+                };
+            };
+});
+        </script>
+
+    </div>
+</section>
+
+

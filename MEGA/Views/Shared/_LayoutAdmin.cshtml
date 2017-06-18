@@ -29,11 +29,11 @@
             <nav id="nav">
 
                 <ul>
-                    <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Главная</span></a></li>
-                    <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Заказы</span></a></li>
-                    <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Пользователи</span></a></li>
+                    <li><a href="../" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Главная</span></a></li>
+                    <li><a href="#" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Заказы</span></a></li>
+                    <li><a href="../Admin/Users" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Пользователи</span></a></li>
                     <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Новости</span></a></li>
-                    <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-trash">Товары</span></a></li>
+                    <li><a href="../Admin/ProductAll" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-trash">Товары</span></a></li>
                     <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-flag">Реклама</span></a></li>
                 </ul>
             </nav>
@@ -72,5 +72,6 @@
         <script src="@Url.Content("~/Content/Admin/js/util.js")"></script>
         <!--[if lte IE 8]><script src="@Url.Content("~/Content/Admin/js/ie/respond.min.js")"></script><![endif]-->
         <script src="@Url.Content("~/Content/Admin/js/main.js")"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -215,9 +215,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706152130116_MegaMigration.cs" />
-    <Compile Include="Migrations\201706152130116_MegaMigration.Designer.cs">
-      <DependentUpon>201706152130116_MegaMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201706172319002_MegaMigration.cs" />
+    <Compile Include="Migrations\201706172319002_MegaMigration.Designer.cs">
+      <DependentUpon>201706172319002_MegaMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -545,15 +545,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Admin\Create.cshtml" />
-    <Content Include="Views\Admin\Delete.cshtml" />
-    <Content Include="Views\Admin\Details.cshtml" />
-    <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Admin\All.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_Layoutlogin.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Admin\ProductAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -573,8 +569,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706152130116_MegaMigration.resx">
-      <DependentUpon>201706152130116_MegaMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706172319002_MegaMigration.resx">
+      <DependentUpon>201706172319002_MegaMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

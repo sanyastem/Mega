@@ -215,13 +215,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706172319002_MegaMigration.cs" />
-    <Compile Include="Migrations\201706172319002_MegaMigration.Designer.cs">
-      <DependentUpon>201706172319002_MegaMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201706241253588_MegaMigration.cs" />
+    <Compile Include="Migrations\201706241253588_MegaMigration.Designer.cs">
+      <DependentUpon>201706241253588_MegaMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AppDbInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -550,6 +549,7 @@
     <Content Include="Views\Shared\_Layoutlogin.cshtml" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\ProductAll.cshtml" />
+    <Content Include="Views\Admin\ProductsCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -569,8 +569,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706172319002_MegaMigration.resx">
-      <DependentUpon>201706172319002_MegaMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706241253588_MegaMigration.resx">
+      <DependentUpon>201706241253588_MegaMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

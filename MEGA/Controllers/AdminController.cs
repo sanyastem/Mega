@@ -18,7 +18,6 @@ namespace MEGA.Controllers
     [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products
 
@@ -52,39 +51,47 @@ namespace MEGA.Controllers
             }
 
         }
-        [HttpGet]
-        public JsonResult GetProducts()
-        {
-            using (var context = new ApplicationDbContext())
-            {
-
-                var jsonData = new
-                {
-                    rows = (
-                      from emp in context.Products.ToList()
-                      select new
-                      {
-                          id = emp.Id.ToString(),
-                          cell = new string[] {
-                          emp.Name.ToString(),
-                          emp.Information.ToString(),
-                          emp.Price.ToString(),
-                          emp.Order.ToString()
-                          }
-                      }).ToArray()
-                };
-                return Json(jsonData, JsonRequestBehavior.AllowGet);
-            }
-
-        }
+       
         public ActionResult Users()
         {
             return View();
         }
-
+        [HttpGet]
+        public ActionResult ProductsCreate()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.GoodsTypes.ToList());
+            }
+            
+        }
+        [HttpPost]
+        public ActionResult ProductsCreate(int type, string Name,string Information,byte[] images,float Price)
+        {
+            Product pro = new Product();
+            pro.GoodsTypes.Id = type;
+            pro.Name = Name;
+            pro.Information = Information;
+            pro.Picture = images;
+            pro.Price = Price;
+            using (var context = new ApplicationDbContext())
+            {
+                if (pro!= null)
+                {
+                    context.Products.Add(pro);
+                    context.SaveChanges();
+                }
+            }
+            return View();
+        }
         public ActionResult ProductAll()
         {
-            return View();
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.Products.ToList());
+            }
+
+            
         }
     }
 }

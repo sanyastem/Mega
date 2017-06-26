@@ -3,3 +3,8 @@ c:\Users\alexa\documents\visual studio 2015\Projects\MEGA\DB\bin\Debug\DB.pdb
 c:\Users\alexa\documents\visual studio 2015\Projects\MEGA\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
 c:\Users\alexa\documents\visual studio 2015\Projects\MEGA\DB\obj\Debug\DB.dll
 c:\Users\alexa\documents\visual studio 2015\Projects\MEGA\DB\obj\Debug\DB.pdb
+F:\GitHub\Mega\DB\bin\Debug\DB.dll
+F:\GitHub\Mega\DB\bin\Debug\DB.pdb
+F:\GitHub\Mega\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+F:\GitHub\Mega\DB\obj\Debug\DB.dll
+F:\GitHub\Mega\DB\obj\Debug\DB.pdb

@@ -15,6 +15,11 @@ namespace DB
         public bool Status { get; set; }
         public int Quantity { get; set; }
         public DateTime DateOrder { get; set; }
+        public ICollection<Product> Products { get; set; }
+        public ICollection<NewOrder> NewOrders { get; set; }
+        public Order()
+        {
+        }
 
     }
 }

@@ -27,18 +27,15 @@ namespace MEGA.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Products",
+                "dbo.NewOrders",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Information = c.String(),
+                        Picture = c.Binary(storeType: "image"),
                         Price = c.Single(nullable: false),
-                        GoodsType_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.GoodsTypes", t => t.GoodsType_Id)
-                .Index(t => t.GoodsType_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Orders",
@@ -50,28 +47,26 @@ namespace MEGA.Migrations
                         Status = c.Boolean(nullable: false),
                         Quantity = c.Int(nullable: false),
                         DateOrder = c.DateTime(nullable: false),
-                        Product_Id = c.Int(),
-                        NewOrder_Id = c.Int(),
                         ApplicationUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Products", t => t.Product_Id)
-                .ForeignKey("dbo.NewOrders", t => t.NewOrder_Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
-                .Index(t => t.Product_Id)
-                .Index(t => t.NewOrder_Id)
                 .Index(t => t.ApplicationUser_Id);
             
             CreateTable(
-                "dbo.NewOrders",
+                "dbo.Products",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        UrlPicture = c.String(),
+                        Information = c.String(),
                         Price = c.Single(nullable: false),
+                        Picture = c.Binary(storeType: "image"),
+                        GoodsTypes_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.GoodsTypes", t => t.GoodsTypes_Id)
+                .Index(t => t.GoodsTypes_Id);
             
             CreateTable(
                 "dbo.News",
@@ -80,7 +75,7 @@ namespace MEGA.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Info = c.String(),
-                        UrlPicture = c.String(),
+                        Picture = c.Binary(storeType: "image"),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -153,6 +148,32 @@ namespace MEGA.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.OrderNewOrders",
+                c => new
+                    {
+                        Order_Id = c.Int(nullable: false),
+                        NewOrder_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Order_Id, t.NewOrder_Id })
+                .ForeignKey("dbo.Orders", t => t.Order_Id, cascadeDelete: true)
+                .ForeignKey("dbo.NewOrders", t => t.NewOrder_Id, cascadeDelete: true)
+                .Index(t => t.Order_Id)
+                .Index(t => t.NewOrder_Id);
+            
+            CreateTable(
+                "dbo.ProductOrders",
+                c => new
+                    {
+                        Product_Id = c.Int(nullable: false),
+                        Order_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Product_Id, t.Order_Id })
+                .ForeignKey("dbo.Products", t => t.Product_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Orders", t => t.Order_Id, cascadeDelete: true)
+                .Index(t => t.Product_Id)
+                .Index(t => t.Order_Id);
+            
         }
         
         public override void Down()
@@ -162,28 +183,34 @@ namespace MEGA.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Orders", "NewOrder_Id", "dbo.NewOrders");
-            DropForeignKey("dbo.Products", "GoodsType_Id", "dbo.GoodsTypes");
-            DropForeignKey("dbo.Orders", "Product_Id", "dbo.Products");
+            DropForeignKey("dbo.ProductOrders", "Order_Id", "dbo.Orders");
+            DropForeignKey("dbo.ProductOrders", "Product_Id", "dbo.Products");
+            DropForeignKey("dbo.Products", "GoodsTypes_Id", "dbo.GoodsTypes");
+            DropForeignKey("dbo.OrderNewOrders", "NewOrder_Id", "dbo.NewOrders");
+            DropForeignKey("dbo.OrderNewOrders", "Order_Id", "dbo.Orders");
+            DropIndex("dbo.ProductOrders", new[] { "Order_Id" });
+            DropIndex("dbo.ProductOrders", new[] { "Product_Id" });
+            DropIndex("dbo.OrderNewOrders", new[] { "NewOrder_Id" });
+            DropIndex("dbo.OrderNewOrders", new[] { "Order_Id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Products", new[] { "GoodsTypes_Id" });
             DropIndex("dbo.Orders", new[] { "ApplicationUser_Id" });
-            DropIndex("dbo.Orders", new[] { "NewOrder_Id" });
-            DropIndex("dbo.Orders", new[] { "Product_Id" });
-            DropIndex("dbo.Products", new[] { "GoodsType_Id" });
+            DropTable("dbo.ProductOrders");
+            DropTable("dbo.OrderNewOrders");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.News");
-            DropTable("dbo.NewOrders");
-            DropTable("dbo.Orders");
             DropTable("dbo.Products");
+            DropTable("dbo.Orders");
+            DropTable("dbo.NewOrders");
             DropTable("dbo.GoodsTypes");
             DropTable("dbo.Advertisings");
         }

@@ -77,6 +77,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -215,9 +223,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706241253588_MegaMigration.cs" />
-    <Compile Include="Migrations\201706241253588_MegaMigration.Designer.cs">
-      <DependentUpon>201706241253588_MegaMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201706260846472_MegaMigration.cs" />
+    <Compile Include="Migrations\201706260846472_MegaMigration.Designer.cs">
+      <DependentUpon>201706260846472_MegaMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -365,6 +373,7 @@
     <Content Include="Content\Main\js\jquery.themepunch.revolution.min.js" />
     <Content Include="Content\Main\js\twitter\jquery.tweet.js" />
     <Content Include="Content\Main\style.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -451,6 +460,7 @@
     <Content Include="Content\Main\css\fontello\font\fontello.ttf" />
     <Content Include="Content\Main\css\fontello\font\fontello.woff" />
     <Content Include="Content\Main\images\ITionika - %28MODX CMS Manager%29.pdf" />
+    <None Include="Properties\PublishProfiles\mega.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\grid.locale-ar.js" />
     <Content Include="Scripts\i18n\grid.locale-bg.js" />
@@ -550,6 +560,16 @@
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\ProductAll.cshtml" />
     <Content Include="Views\Admin\ProductsCreate.cshtml" />
+    <Content Include="Views\Admin\NewsAll.cshtml" />
+    <Content Include="Views\Admin\ProdectDetails.cshtml" />
+    <Content Include="Views\Admin\ProductEdit.cshtml" />
+    <Content Include="Views\Admin\NewsCreate.cshtml" />
+    <Content Include="Views\Admin\NewsDetails.cshtml" />
+    <Content Include="Views\Admin\NewsEdit.cshtml" />
+    <Content Include="Views\Admin\AdvertisingAll.cshtml" />
+    <Content Include="Views\Admin\AdvertisingCreate.cshtml" />
+    <Content Include="Views\Admin\AdvertisingDetails.cshtml" />
+    <Content Include="Views\Admin\AdvertisingEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -569,8 +589,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706241253588_MegaMigration.resx">
-      <DependentUpon>201706241253588_MegaMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706260846472_MegaMigration.resx">
+      <DependentUpon>201706260846472_MegaMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

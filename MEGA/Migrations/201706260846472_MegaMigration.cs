@@ -47,11 +47,28 @@ namespace MEGA.Migrations
                         Status = c.Boolean(nullable: false),
                         Quantity = c.Int(nullable: false),
                         DateOrder = c.DateTime(nullable: false),
+                        NewOrder_Id = c.Int(),
+                        Product_Id = c.Int(),
                         ApplicationUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.NewOrders", t => t.NewOrder_Id)
+                .ForeignKey("dbo.Products", t => t.Product_Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
+                .Index(t => t.NewOrder_Id)
+                .Index(t => t.Product_Id)
                 .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.News",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Info = c.String(),
+                        Picture = c.Binary(storeType: "image"),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Products",
@@ -67,17 +84,6 @@ namespace MEGA.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.GoodsTypes", t => t.GoodsTypes_Id)
                 .Index(t => t.GoodsTypes_Id);
-            
-            CreateTable(
-                "dbo.News",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Info = c.String(),
-                        Picture = c.Binary(storeType: "image"),
-                    })
-                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -148,32 +154,6 @@ namespace MEGA.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
-            CreateTable(
-                "dbo.OrderNewOrders",
-                c => new
-                    {
-                        Order_Id = c.Int(nullable: false),
-                        NewOrder_Id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Order_Id, t.NewOrder_Id })
-                .ForeignKey("dbo.Orders", t => t.Order_Id, cascadeDelete: true)
-                .ForeignKey("dbo.NewOrders", t => t.NewOrder_Id, cascadeDelete: true)
-                .Index(t => t.Order_Id)
-                .Index(t => t.NewOrder_Id);
-            
-            CreateTable(
-                "dbo.ProductOrders",
-                c => new
-                    {
-                        Product_Id = c.Int(nullable: false),
-                        Order_Id = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Product_Id, t.Order_Id })
-                .ForeignKey("dbo.Products", t => t.Product_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Orders", t => t.Order_Id, cascadeDelete: true)
-                .Index(t => t.Product_Id)
-                .Index(t => t.Order_Id);
-            
         }
         
         public override void Down()
@@ -183,15 +163,9 @@ namespace MEGA.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.ProductOrders", "Order_Id", "dbo.Orders");
-            DropForeignKey("dbo.ProductOrders", "Product_Id", "dbo.Products");
+            DropForeignKey("dbo.Orders", "Product_Id", "dbo.Products");
             DropForeignKey("dbo.Products", "GoodsTypes_Id", "dbo.GoodsTypes");
-            DropForeignKey("dbo.OrderNewOrders", "NewOrder_Id", "dbo.NewOrders");
-            DropForeignKey("dbo.OrderNewOrders", "Order_Id", "dbo.Orders");
-            DropIndex("dbo.ProductOrders", new[] { "Order_Id" });
-            DropIndex("dbo.ProductOrders", new[] { "Product_Id" });
-            DropIndex("dbo.OrderNewOrders", new[] { "NewOrder_Id" });
-            DropIndex("dbo.OrderNewOrders", new[] { "Order_Id" });
+            DropForeignKey("dbo.Orders", "NewOrder_Id", "dbo.NewOrders");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
@@ -200,15 +174,15 @@ namespace MEGA.Migrations
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.Products", new[] { "GoodsTypes_Id" });
             DropIndex("dbo.Orders", new[] { "ApplicationUser_Id" });
-            DropTable("dbo.ProductOrders");
-            DropTable("dbo.OrderNewOrders");
+            DropIndex("dbo.Orders", new[] { "Product_Id" });
+            DropIndex("dbo.Orders", new[] { "NewOrder_Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
-            DropTable("dbo.News");
             DropTable("dbo.Products");
+            DropTable("dbo.News");
             DropTable("dbo.Orders");
             DropTable("dbo.NewOrders");
             DropTable("dbo.GoodsTypes");

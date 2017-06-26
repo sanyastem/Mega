@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PagedList;
 
 namespace MEGA.Controllers
 {
@@ -82,16 +83,224 @@ namespace MEGA.Controllers
                     context.SaveChanges();
                 }
             }
-            return View();
+            return RedirectToAction("ProductAll");
         }
-        public ActionResult ProductAll()
+        public ActionResult ProductDelete(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-                return View(context.Products.ToList());
+                Product b = context.Products.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                context.Products.Remove(b);
+                context.SaveChanges();
             }
-
+            return RedirectToAction("ProductAll");
+        }
+        public ActionResult ProdectDetails(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Product b = context.Products.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
             
+        }
+        [HttpGet]
+        public ActionResult ProductEdit(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Product b = context.Products.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
+        }
+        [HttpPost]
+        public ActionResult ProductEdit(Product product)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Entry(product).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("ProductAll");
+            }
+        }
+        public ActionResult ProductAll(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 3;
+            using (var context = new ApplicationDbContext())
+            {
+
+                return View(context.Products.ToList().ToPagedList(pageNumber, pageSize));
+            }
+           
+        }
+        public ActionResult NewsAll(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 3;
+            using (var context = new ApplicationDbContext())
+            {
+
+                return View(context.Newss.ToList().ToPagedList(pageNumber, pageSize));
+            }
+        }
+        [HttpGet]
+        public ActionResult NewsCreate()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewsCreate(News news)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                if (news == null)
+                {
+                    return HttpNotFound();
+                }
+                context.Newss.Add(news);
+                context.SaveChanges();
+                return RedirectToAction("NewsAll");
+            }
+        }
+        public ActionResult NewsDetails(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                News b = context.Newss.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
+        }
+        [HttpGet]
+        public ActionResult NewsEdit(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                News b = context.Newss.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
+        }
+        [HttpPost]
+        public ActionResult NewsEdit(News news)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Entry(news).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("NewsAll");
+            }
+        }
+        public ActionResult NewsDelete(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                News b = context.Newss.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                context.Newss.Remove(b);
+                context.SaveChanges();
+            }
+            return RedirectToAction("NewsAll");
+        }
+        public ActionResult AdvertisingAll(int? page)
+        {
+            int pageNumber = (page ?? 1);
+            int pageSize = 3;
+            using (var context = new ApplicationDbContext())
+            {
+
+                return View(context.Advertisings.ToList().ToPagedList(pageNumber, pageSize));
+            }
+        }
+        [HttpGet]
+        public ActionResult AdvertisingCreate()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdvertisingCreate(Advertising news)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                if (news == null)
+                {
+                    return HttpNotFound();
+                }
+                context.Advertisings.Add(news);
+                context.SaveChanges();
+                return RedirectToAction("AdvertisingAll");
+            }
+        }
+        public ActionResult AdvertisingDetails(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Advertising b = context.Advertisings.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
+        }
+        [HttpGet]
+        public ActionResult AdvertisingEdit(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Advertising b = context.Advertisings.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
+        }
+        [HttpPost]
+        public ActionResult AdvertisingEdit(Advertising news)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Entry(news).State = EntityState.Modified;
+                context.SaveChanges();
+                return RedirectToAction("AdvertisingAll");
+            }
+        }
+        public ActionResult AdvertisingDelete(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Advertising b = context.Advertisings.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                context.Advertisings.Remove(b);
+                context.SaveChanges();
+            }
+            return RedirectToAction("AdvertisingAll");
         }
     }
 }

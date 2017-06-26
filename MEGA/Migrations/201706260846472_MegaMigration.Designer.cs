@@ -13,7 +13,7 @@ namespace MEGA.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201706241253588_MegaMigration"; }
+            get { return "201706260846472_MegaMigration"; }
         }
         
         string IMigrationMetadata.Source

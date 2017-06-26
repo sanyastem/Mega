@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<DB.Product>
+﻿@model PagedList.IPagedList<DB.News>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "ProductAll";
@@ -8,11 +8,11 @@
 <section id="top" class="one dark cover">
     <div class="container">
         <header>
-            <h2 class="alt">Товары</h2>
+            <h2 class="alt">Новости</h2>
 
         </header>
         <p>
-            @Html.ActionLink("Добавить", "ProductsCreate")
+            @Html.ActionLink("Добавить", "NewsCreate")
         </p>
         <table class="table">
             <tr>
@@ -23,7 +23,7 @@
                     Информация
                 </th>
                 <th>
-                    Цена
+                    Картинка
                 </th>
                 <th></th>
             </tr>
@@ -35,20 +35,20 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Information)
+                        @Html.DisplayFor(modelItem => item.Info)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Price)
+                        @Html.DisplayFor(modelItem => item.Picture)
                     </td>
                     <td>
-                        @Html.ActionLink("Редактировать", "ProductEdit", new { id = item.Id }) |
-                        @Html.ActionLink("Детали", "ProdectDetails", new { id = item.Id }) |
-                        @Html.ActionLink("Удалить", "ProductDelete", new { id = item.Id })
+                        @Html.ActionLink("Редактировать", "NewsEdit", new { id = item.Id }) |
+                        @Html.ActionLink("Детали", "NewsDetails", new { id = item.Id }) |
+                        @Html.ActionLink("Удалить", "NewsDelete", new { id = item.Id })
                     </td>
                 </tr>
             }
             Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
-            @Html.PagedListPager(Model, page => Url.Action("ProductAll", new { page }))
+            @Html.PagedListPager(Model, page => Url.Action("NewsAll", new { page }))
         </table>
     </div>
 </section>

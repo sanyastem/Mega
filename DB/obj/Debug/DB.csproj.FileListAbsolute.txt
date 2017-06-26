@@ -8,3 +8,8 @@ F:\GitHub\Mega\DB\bin\Debug\DB.pdb
 F:\GitHub\Mega\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
 F:\GitHub\Mega\DB\obj\Debug\DB.dll
 F:\GitHub\Mega\DB\obj\Debug\DB.pdb
+D:\GitHub\mega\DB\bin\Debug\DB.dll
+D:\GitHub\mega\DB\bin\Debug\DB.pdb
+D:\GitHub\mega\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+D:\GitHub\mega\DB\obj\Debug\DB.dll
+D:\GitHub\mega\DB\obj\Debug\DB.pdb

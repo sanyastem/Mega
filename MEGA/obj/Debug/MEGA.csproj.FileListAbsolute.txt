@@ -329,8 +329,6 @@ D:\GitHub\mega\MEGA\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dl
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.csprojResolveAssemblyReference.cache
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.dll
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.pdb
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.MegaMigration.resources
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\GitHub\mega\MEGA\bin\PagedList.dll
 D:\GitHub\mega\MEGA\bin\PagedList.Mvc.dll
 D:\GitHub\mega\MEGA\bin\PagedList.xml

@@ -11,8 +11,7 @@ namespace DB
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        [Column(TypeName ="image")]
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
         public float Price { get; set; }
         public ICollection<Order> Orders { get; set; }
         public NewOrder()

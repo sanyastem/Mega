@@ -1,0 +1,54 @@
+﻿@model PagedList.IPagedList<DB.News>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "ProductAll";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Новости</h2>
+
+        </header>
+        <p>
+            @Html.ActionLink("Добавить", "NewsCreate")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Название
+                </th>
+                <th>
+                    Информация
+                </th>
+                <th>
+                    Картинка
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Info)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Picture)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "NewsEdit", new { id = item.Id }) |
+                        @Html.ActionLink("Детали", "NewsDetails", new { id = item.Id }) |
+                        @Html.ActionLink("Удалить", "NewsDelete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("NewsAll", new { page }))
+        </table>
+    </div>
+</section>

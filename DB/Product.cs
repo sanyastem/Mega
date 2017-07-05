@@ -14,8 +14,7 @@ namespace DB
         public string Name { get; set; }
         public string Information { get; set; }
         public float Price { get; set; }
-        [Column(TypeName = "image")]
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
         public GoodsType GoodsTypes { get; set; }
         public ICollection<Order> Orders { get; set; }
         public Product()

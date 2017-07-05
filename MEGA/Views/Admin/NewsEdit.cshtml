@@ -12,7 +12,7 @@
 
         </header>
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("NewsEdit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
@@ -41,7 +41,7 @@
                 <div class="form-group">
                     Картинка
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Picture, new { htmlAttributes = new { @class = "form-control" } })
+                        <input type="file" name="uploadImage" value="" />
                         @Html.ValidationMessageFor(model => model.Picture, "", new { @class = "text-danger" })
                     </div>
                 </div>

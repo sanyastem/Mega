@@ -40,6 +40,11 @@
                     <div class="col-md-6">
                         <div class="phone-email"><i class="fa fa-phone"></i>+375 (33) 65 44 777</div>
                         <div class="phone-email phone-email-2"><i class="fa fa-envelope"></i>info@fotocenter.by</div>
+                        @if (User.Identity.Name == "somemail@mail.ru")
+                        {
+                            <div class="admin"><a href="@Url.Content("~/Admin")">Администратор</a></div>
+                        }
+
                     </div>
                 </div>
             </div><!-- End container -->

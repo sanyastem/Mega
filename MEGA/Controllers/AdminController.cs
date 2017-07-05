@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using PagedList;
+using System.IO;
 
 namespace MEGA.Controllers
 {
@@ -52,7 +53,6 @@ namespace MEGA.Controllers
             }
 
         }
-       
         public ActionResult Users()
         {
             return View();
@@ -67,23 +67,28 @@ namespace MEGA.Controllers
             
         }
         [HttpPost]
-        public ActionResult ProductsCreate(int type, string Name,string Information,byte[] images,float Price)
+        public ActionResult ProductsCreate(int ID,string name,string Information, HttpPostedFileBase uploadImage,float Price)
         {
             Product pro = new Product();
-            pro.GoodsTypes.Id = type;
-            pro.Name = Name;
+           pro.GoodsTypes. = ID;
+            pro.Name = name;
             pro.Information = Information;
-            pro.Picture = images;
             pro.Price = Price;
-            using (var context = new ApplicationDbContext())
+            if (uploadImage != null)
             {
-                if (pro!= null)
-                {
-                    context.Products.Add(pro);
-                    context.SaveChanges();
-                }
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                // сохраняем файл в папку Files в проекте
+                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                pro.Picture = "../../Files/" + fileName;
             }
-            return RedirectToAction("ProductAll");
+            
+                using (var context = new ApplicationDbContext())
+                {
+                        context.Products.Add(pro);
+                        context.SaveChanges();
+                }
+                return RedirectToAction("ProductAll");
         }
         public ActionResult ProductDelete(int id)
         {
@@ -126,8 +131,16 @@ namespace MEGA.Controllers
             }
         }
         [HttpPost]
-        public ActionResult ProductEdit(Product product)
+        public ActionResult ProductEdit(Product product, HttpPostedFileBase uploadImage)
         {
+            if (uploadImage != null)
+            {
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                // сохраняем файл в папку Files в проекте
+                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                product.Picture = "../../Files/" + fileName;
+            }
             using (var context = new ApplicationDbContext())
             {
                 context.Entry(product).State = EntityState.Modified;
@@ -162,8 +175,16 @@ namespace MEGA.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult NewsCreate(News news)
+        public ActionResult NewsCreate(News news, HttpPostedFileBase uploadImage)
         {
+            if (uploadImage != null)
+            {
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                // сохраняем файл в папку Files в проекте
+                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                news.Picture = "../../Files/" + fileName;
+            }
             using (var context = new ApplicationDbContext())
             {
                 if (news == null)
@@ -201,8 +222,16 @@ namespace MEGA.Controllers
             }
         }
         [HttpPost]
-        public ActionResult NewsEdit(News news)
+        public ActionResult NewsEdit(News news, HttpPostedFileBase uploadImage)
         {
+            if (uploadImage != null)
+            {
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                // сохраняем файл в папку Files в проекте
+                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                news.Picture = "../../Files/" + fileName;
+            }
             using (var context = new ApplicationDbContext())
             {
                 context.Entry(news).State = EntityState.Modified;

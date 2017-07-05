@@ -12,25 +12,25 @@
 
         </header>
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("ProductsCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
 
 
-            <select name="type">
+            <select name="ID">
 
 
                 @foreach (var item in Model)
                 {
-                    <option value="@item.Id">@item.Name</option>
+                    <option value="@item.Id" >@item.Name</option>
 
                 }
             </select>
-            <input type="text" name="Name" value="" />
-            <input type="text" name="Information" value="" />
-            <input type="image" name="images" value="" />
-            <input type="text" name="Price" value="" />
+            <input type="text" name="Name"/>
+            <input type="text" name="Information"  />
+            <input type="file" name="uploadImage" />
+            <input type="text" name="Price" />
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Сохранить" class="btn btn-default" />

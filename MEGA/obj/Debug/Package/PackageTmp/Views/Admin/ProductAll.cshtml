@@ -1,0 +1,54 @@
+﻿@model PagedList.IPagedList<DB.Product>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "ProductAll";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Товары</h2>
+
+        </header>
+        <p>
+            @Html.ActionLink("Добавить", "ProductsCreate")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Название
+                </th>
+                <th>
+                    Информация
+                </th>
+                <th>
+                    Цена
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Information)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "ProductEdit", new { id = item.Id }) |
+                        @Html.ActionLink("Детали", "ProdectDetails", new { id = item.Id }) |
+                        @Html.ActionLink("Удалить", "ProductDelete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("ProductAll", new { page }))
+        </table>
+    </div>
+</section>

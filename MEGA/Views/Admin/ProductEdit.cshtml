@@ -32,7 +32,7 @@
                 <div class="form-group">
                     Информация
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Information, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextAreaFor(model => model.Information, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Information, "", new { @class = "text-danger" })
                     </div>
                 </div>

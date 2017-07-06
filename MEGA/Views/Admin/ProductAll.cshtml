@@ -14,6 +14,7 @@
         <p>
             @Html.ActionLink("Добавить", "ProductsCreate")
         </p>
+
         <table class="table">
             <tr>
                 <th>
@@ -38,7 +39,7 @@
                         @Html.DisplayFor(modelItem => item.Information)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Price)
+                        @Html.DisplayFor(modelItem => item.Price) бел.руб.
                     </td>
                     <td>
                         @Html.ActionLink("Редактировать", "ProductEdit", new { id = item.Id }) |
@@ -50,5 +51,20 @@
             Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
             @Html.PagedListPager(Model, page => Url.Action("ProductAll", new { page }))
         </table>
+        <select>
+            @foreach (var item in ViewBag.Types)
+            {
+                <option value="@item.Id">@item.Name</option>
+
+            }
+        </select>
+
     </div>
+    <script>
+        $("select").change(function () {
+            if ($(this).val() == 0) return false;
+
+            window.open("../../admin/ProductAll/" + $(this).val(), "_self");
+        });
+    </script>
 </section>

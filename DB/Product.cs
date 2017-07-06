@@ -13,13 +13,13 @@ namespace DB
 
         public string Name { get; set; }
         public string Information { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
         public string Picture { get; set; }
-        public GoodsType GoodsTypes { get; set; }
+        public int? GoodsTypeId { get; set; }
+        public GoodsType GoodsType { get; set; }
         public ICollection<Order> Orders { get; set; }
         public Product()
         {
-            GoodsTypes = new GoodsType();
             Orders = new List<Order>();
         }
     }

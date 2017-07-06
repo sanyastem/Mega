@@ -67,13 +67,9 @@ namespace MEGA.Controllers
             
         }
         [HttpPost]
-        public ActionResult ProductsCreate(int ID,string name,string Information, HttpPostedFileBase uploadImage,float Price)
+        public ActionResult ProductsCreate(Product pro, HttpPostedFileBase uploadImage)
         {
-            Product pro = new Product();
-           pro.GoodsTypes. = ID;
-            pro.Name = name;
-            pro.Information = Information;
-            pro.Price = Price;
+
             if (uploadImage != null)
             {
                 // получаем имя файла
@@ -148,16 +144,24 @@ namespace MEGA.Controllers
                 return RedirectToAction("ProductAll");
             }
         }
-        public ActionResult ProductAll(int? page)
+        public ActionResult ProductAll(int? page,int id = 0)
         {
             int pageNumber = (page ?? 1);
             int pageSize = 3;
             using (var context = new ApplicationDbContext())
             {
-
-                return View(context.Products.ToList().ToPagedList(pageNumber, pageSize));
+                ViewBag.Types = context.GoodsTypes.ToList();
+                if (id == 0)
+                {
+                        
+                        return View(context.Products.ToList().ToPagedList(pageNumber, pageSize));
+                }
+                else
+                {
+                    return View(context.Products.Where(x=>x.GoodsTypeId == id).ToList().ToPagedList(pageNumber, pageSize));
+                }
             }
-           
+
         }
         public ActionResult NewsAll(int? page)
         {
@@ -330,6 +334,14 @@ namespace MEGA.Controllers
                 context.SaveChanges();
             }
             return RedirectToAction("AdvertisingAll");
+        }
+        public ActionResult OrderAll()
+        {
+            using (var contex = new ApplicationDbContext())
+            {
+                return View(contex.Orders.ToList());
+            }
+            
         }
     }
 }

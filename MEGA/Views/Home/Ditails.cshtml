@@ -1,0 +1,39 @@
+﻿@model List<DB.Product>
+
+@{
+    ViewBag.Title = Model[0].Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .img-product{
+        width: 50%;
+    }
+    .block-img{
+        float:left;
+        width: 50%;
+    }
+    .block-txt{
+        float:right;
+        width: 50%;
+    }
+    h1{
+        color:red;
+    }
+</style>
+<div class="sections section-2" id="fotopech">
+    <div class="container">
+        <div class="row">
+            <div class="block-img">
+                <img class="img-product" src="@Model[0].Picture" alt="@Model[0].Name" />
+            </div>
+            <div class="block-txt">
+
+                <h1>@Model[0].Name</h1>
+                <p>@Model[0].Information</p>
+                <p>@Model[0].Price  бел.руб.</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+

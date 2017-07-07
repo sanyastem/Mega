@@ -6,166 +6,187 @@
 
 
 
+<style>
+    li{
+        list-style-type: none;
+    }
+</style>
+<div class="clearfix"></div>
+<div class="slideshow">
+    <div class="tp-banner-container">
+        <div class="tp-banner">
+            <ul>
+                <li data-transition="random" data-slotamount="7" data-masterspeed="1500">
+                    <!-- MAIN IMAGE -->
+                    <img src="@Url.Content("~/Content/Main/images/slideshow.png")" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
+                    <div class="slideshow-bg"
+                         data-y="310"
+                         data-x="center"
+                         data-start="0"></div>
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="slide-h2 tp-caption randomrotate skewtoleft tp-resizeme start white"
+                         data-y="160"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-start="300"
+                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-speed="500"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 2">
+                        <h2>@ViewBag.Advertisings[0].Name</h2>
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="slide-h3 tp-caption customin white"
+                         data-y="230"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-start="600"
+                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-speed="500"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 2">
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="slide-p tp-caption black randomrotate skewtoleft tp-resizeme start"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="310"
+                         data-speed="500"
+                         data-start="1300"
+                         data-easing="Power3.easeInOut"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                         data-endspeed="500" style="z-index: 6;white-space: pre-line;max-width: 1170px;text-align: center;">
+                        <p class="white">@ViewBag.Advertisings[0].Info</p>
+                    </div>
+
+
+
+                </li>
+
+
+                <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
+                    <!-- MAIN IMAGE -->
+                    <img src="@Url.Content("~/Content/Main/images/slideshow-3.png")" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                    <div class="slideshow-bg"
+                         data-y="310"
+                         data-x="center"
+                         data-start="0"></div>
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <!-- Layer NR. 2 -->
+                    <div class="slide-h2 tp-caption randomrotate skewtoleft tp-resizeme start white"
+                         data-y="60"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-start="2200"
+                         data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+                         data-speed="500"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 2">
+                        <h2>@ViewBag.Advertisings[1].Name</h2>
+                    </div>
+
+                    <div class="slide-p tp-caption black randomrotate skewtoleft tp-resizeme start"
+                         data-x="center"
+                         data-hoffset="0"
+                         data-y="310"
+                         data-speed="500"
+                         data-start="1300"
+                         data-easing="Power3.easeInOut"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-elementdelay="0.1"
+                         data-endelementdelay="0.1"
+                         data-endspeed="500" style="z-index: 6;white-space: pre-line;max-width: 1170px;text-align: center;">
+                        <p class="white">@ViewBag.Advertisings[1].Info</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div><!-- End tp-banner-container -->
+</div><!-- End slideshow -->
 <div class="sections section-2" id="fotopech">
     <div class="container">
-        <div class="animation" data-animate="bounceInDown">
+        <div class="animation">
             <div class="sections-title">
                 <div class="sections-title-h3"><h3>Фотопечать</h3></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie.</p>
             </div><!-- End sections-title -->
         </div><!-- End animation -->
         <div class="row">
-            <div class="animation" data-animate="bounceInUp">
-                <div class="portfolio-slide bxslider-slide">
+            <div class="animation" >
+                <div class="portfolio-slide">
                     <ul>
                         <li>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                            <a href="../../AllDeteils/@ViewBag.pechat1[0].Id">
+                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                    <div class="portfolio-one">
+                                        <div class="portfolio-head">
+                                            <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
+                                            <div class="portfolio-hover">
+                                               
+                                            </div>
+                                        </div><!-- End portfolio-head -->
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                                        <div class="portfolio-content">
+                                            <i class="fa fa-leaf"></i>
+                                            <div class="portfolio-meta">
+                                                <div class="portfolio-name"><h6>@ViewBag.pechat1[0].Name</h6></div>
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                                            </div><!-- End portfolio-meta -->
+                                        </div><!-- End portfolio-content -->
+                                    </div><!-- End portfolio-item -->
+                                </div>
+                            </a>
+                            <a href="../../AllDeteils/@ViewBag.pechat2[0].Id">
+                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                    <div class="portfolio-one">
+                                        <div class="portfolio-head">
+                                            <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
+                                            <div class="portfolio-hover">
+                                                
+                                            </div>
+                                        </div><!-- End portfolio-head -->
+                                        <div class="portfolio-content">
+                                            <i class="fa fa-leaf"></i>
+                                            <div class="portfolio-meta">
+                                                <div class="portfolio-name"><h6>@ViewBag.pechat2[0].Name</h6></div>
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                                            </div><!-- End portfolio-meta -->
+                                        </div><!-- End portfolio-content -->
+                                    </div><!-- End portfolio-item -->
+                                </div>
+                            </a>
+                            <a href="../../AllDeteils/@ViewBag.pechat3[0].Id">
+                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                    <div class="portfolio-one">
+                                        <div class="portfolio-head">
+                                            <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
+                                            <div class="portfolio-hover">
+                                                
+                                            </div>
+                                        </div><!-- End portfolio-head -->
+                                        <div class="portfolio-content">
+                                            <i class="fa fa-leaf"></i>
+                                            <div class="portfolio-meta">
+                                                <div class="portfolio-name"><h6>@ViewBag.pechat3[0].Name</h6></div>
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
+                                            </div><!-- End portfolio-meta -->
+                                        </div><!-- End portfolio-content -->
+                                    </div><!-- End portfolio-item -->
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div><!-- End portfolio-slide -->
@@ -175,9 +196,6 @@
         <div class="animation" data-animate="bounceInRight">
 
         </div><!-- End animation -->
-        <div class="she">
-            <a class="moreProducts" href="">Подробнее</a>
-        </div>
     </div><!-- End container -->
 </div><!-- End sections -->
 
@@ -195,152 +213,29 @@
                 <div class="portfolio-slide bxslider-slide">
                     <ul>
                         <li>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                            @for (int i = 0; i < 4; i++)
+                            {
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                                <a href="../../Home/Ditails/@ViewBag.one3[i].Id">
+                                    <div class="col-md-3 portfolio-item">
+                                        <div class="portfolio-one">
+                                            <div class="portfolio-head">
+                                                <div class="portfolio-img"><img alt="" src="@ViewBag.one3[i].Picture"></div>
+                                                <div class="portfolio-hover">
+                                                    
+                                                </div>
+                                            </div><!-- End portfolio-head -->
+                                            <div class="portfolio-content">
+                                                <i class="fa fa-leaf"></i>
+                                                <div class="portfolio-meta">
+                                                    <div class="portfolio-name"><h6>@ViewBag.one3[i].Name</h6></div>
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
+                                                </div><!-- End portfolio-meta -->
+                                            </div><!-- End portfolio-content -->
+                                        </div><!-- End portfolio-item -->
+                                    </div>
+                                </a>
+                            }
                         </li>
                     </ul>
                 </div><!-- End portfolio-slide -->
@@ -350,7 +245,7 @@
 
         </div><!-- End animation -->
         <div class="she">
-            <a class="moreProducts" href="">Подробнее</a>
+            <a class="moreProducts" href="../../Home/AllDeteils/4">Подробнее</a>
         </div>
     </div><!-- End container -->
 </div><!-- End sections -->
@@ -369,152 +264,28 @@
                 <div class="portfolio-slide bxslider-slide">
                     <ul>
                         <li>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
+                            @for (int i = 0; i < 4; i++)
+                            {
+                                <a href="../../Home/Ditails/@ViewBag.one4[i].Id">
+                                    <div class="col-md-3 portfolio-item">
+                                        <div class="portfolio-one">
+                                            <div class="portfolio-head">
+                                                <div class="portfolio-img"><img alt="" src="@ViewBag.one4[i].Picture"></div>
+                                                <div class="portfolio-hover">
+                                                    
+                                                </div>
+                                            </div><!-- End portfolio-head -->
+                                            <div class="portfolio-content">
+                                                <i class="fa fa-leaf"></i>
+                                                <div class="portfolio-meta">
+                                                    <div class="portfolio-name"><h6>@ViewBag.one4[i].Name</h6></div>
 
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
-                            <div class="col-md-3 portfolio-item">
-                                <div class="portfolio-one">
-                                    <div class="portfolio-head">
-                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                        <div class="portfolio-hover">
-                                            <a class="portfolio-link" href="single-portfolio.html"><i class="fa fa-link"></i></a>
-                                            <a class="portfolio-zoom prettyPhoto" href="images/portfolio-1.png"><i class="fa fa-search"></i></a>
-                                        </div>
-                                    </div><!-- End portfolio-head -->
-                                    <div class="portfolio-content">
-                                        <i class="fa fa-leaf"></i>
-                                        <div class="portfolio-meta">
-                                            <div class="portfolio-name"><h6><a href="single-portfolio.html">Категория</a></h6></div>
-
-                                        </div><!-- End portfolio-meta -->
-                                    </div><!-- End portfolio-content -->
-                                </div><!-- End portfolio-item -->
-                            </div>
+                                                </div><!-- End portfolio-meta -->
+                                            </div><!-- End portfolio-content -->
+                                        </div><!-- End portfolio-item -->
+                                    </div>
+                                </a>
+                            }
                         </li>
                     </ul>
                 </div><!-- End portfolio-slide -->
@@ -524,7 +295,7 @@
 
         </div><!-- End animation -->
         <div class="she">
-            <a class="moreProducts" href="">Подробнее</a>
+            <a class="moreProducts" href="../../Home/AllDeteils/5">Подробнее</a>
         </div>
     </div><!-- End container -->
 </div><!-- End sections -->
@@ -532,100 +303,36 @@
 
 <div class="sections" id="suvenir">
     <div class="container">
-        <div class="animation" data-animate="bounceInRight">
+        <div class="animation" >
             <div class="sections-title">
                 <div class="sections-title-h3"><h3>Сувениры</h3></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem quam, adipiscing condimentum tristique vel, eleifend sed turpis. Pellentesque cursus arcu id magna euismod in elementum purus molestie.</p>
             </div><!-- End sections-title -->
         </div><!-- End animation -->
         <div class="row">
-            <div class="animation" data-animate="bounceInLeft">
-                <div class="bxslider-slide box-icon-slide">
+            <div class="animation" >
+                <div class="">
                     <ul>
                         <li>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-heart"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
+                            @for (int i = 5; i < ViewBag.suvenir.Count; i++)
+                            {
+                                <a href="../../Home/AllDeteils/@ViewBag.suvenir[i].Id">
+                                    <div class="col-md-4">
+                                        <div class="box-icon">
+                                            <div class="box-icon-i box-icon-i-2"><i class="fa fa-heart"></i></div>
+                                            <div class="box-icon-content">
+                                                <h5>@ViewBag.suvenir[i].Name</h5>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-desktop"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-briefcase"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-gears"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-bolt"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-mobile-phone"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-cog"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="box-icon">
-                                    <div class="box-icon-i box-icon-i-2"><i class="fa fa-font"></i></div>
-                                    <div class="box-icon-content">
-                                        <h5>преимущество</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Integer lorem quam adipiscing. <a href="#">Подробнее</a></p>
-                                    </div>
-                                </div>
-                            </div>
+                                </a>
+                            }
                         </li>
                     </ul>
                 </div><!-- End box-icon-slide -->
             </div><!-- End animation -->
         </div><!-- End row -->
     </div><!-- End container -->
-    <div class="she">
-        <a class="moreProducts" href="">Подробнее</a>
-    </div>
 </div><!-- End sections -->
 
 <div class="sections sections-padding-b-50" id="contact">

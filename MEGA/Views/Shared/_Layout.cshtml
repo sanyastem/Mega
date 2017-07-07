@@ -8,7 +8,6 @@
 
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>MEGA</title>
     <meta name="description" content="Mega">
     <meta name="author" content="itionika.by">
 
@@ -51,7 +50,7 @@
         </header><!-- End header -->
         <header id="header">
             <div class="container clearfix">
-                <div class="logo"><a href="index.html"><img src="@Url.Content("~/Content/Main/images/logo.png")" alt="Mega"></a></div>
+                <div class="logo"><a href="../../"><img src="@Url.Content("~/Content/Main/images/logo.png")" alt="Mega"></a></div>
                 <div class="header-search">
                     <div class="header-search-a"><i class="fa fa-search"></i></div>
                     <div class="header-search-form">
@@ -62,12 +61,12 @@
                 </div>
                 <nav class="navigation">
                     <ul>
-                        <li class="current_page_item"><a href="">Главная</a></li>
+                        <li><a href="../../">Главная</a></li>
                         <li><a href="#fotopech">Фотопечать</a></li>
                         <li><a href="#fotoknig">Фотокниги</a></li>
                         <li><a href="#vypusk">Выпускные альбомы</a></li>
                         <li><a href="#suvenir">Сувениры</a></li>
-                        <li><a href="">Услуги</a></li>
+                        <li><a href="@Url.Content("~/Home/Services")">Услуги</a></li>
                         <li><a href="#contact">Контакты</a></li>
                     </ul>
                 </nav><!-- End navigation -->
@@ -76,111 +75,7 @@
 
 
    
-        <div class="clearfix"></div>
-        <div class="slideshow">
-            <div class="tp-banner-container">
-                <div class="tp-banner">
-                    <ul>
-                        <li data-transition="random" data-slotamount="7" data-masterspeed="1500">
-                            <!-- MAIN IMAGE -->
-                            <img src="@Url.Content("~/Content/Main/images/slideshow.png")" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-
-                            <div class="slideshow-bg"
-                                 data-y="310"
-                                 data-x="center"
-                                 data-start="0"></div>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <div class="slide-h2 tp-caption randomrotate skewtoleft tp-resizeme start white"
-                                 data-y="160"
-                                 data-x="center"
-                                 data-hoffset="0"
-                                 data-start="300"
-                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                 data-speed="500"
-                                 data-easing="Power3.easeInOut"
-                                 data-endspeed="300"
-                                 style="z-index: 2">
-                                <h2>@ViewBag.Advertisings[0].Name</h2>
-                            </div>
-
-                            <!-- LAYER NR. 2 -->
-                            <div class="slide-h3 tp-caption customin white"
-                                 data-y="230"
-                                 data-x="center"
-                                 data-hoffset="0"
-                                 data-start="600"
-                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                 data-speed="500"
-                                 data-easing="Power3.easeInOut"
-                                 data-endspeed="300"
-                                 style="z-index: 2">
-                            </div>
-
-                            <!-- LAYER NR. 3 -->
-                            <div class="slide-p tp-caption black randomrotate skewtoleft tp-resizeme start"
-                                 data-x="center"
-                                 data-hoffset="0"
-                                 data-y="310"
-                                 data-speed="500"
-                                 data-start="1300"
-                                 data-easing="Power3.easeInOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.1"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500" style="z-index: 6;white-space: pre-line;max-width: 1170px;text-align: center;">
-                                <p class="white">@ViewBag.Advertisings[0].Info</p>
-                            </div>
-
-
-
-                        </li>
-
-
-                        <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
-                            <!-- MAIN IMAGE -->
-                            <img src="@Url.Content("~/Content/Main/images/slideshow-3.png")" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-
-                            <div class="slideshow-bg"
-                                 data-y="310"
-                                 data-x="center"
-                                 data-start="0"></div>
-                            <!-- LAYERS -->
-                            <!-- LAYER NR. 1 -->
-                            <!-- Layer NR. 2 -->
-                            <div class="slide-h2 tp-caption randomrotate skewtoleft tp-resizeme start white"
-                                 data-y="60"
-                                 data-x="center"
-                                 data-hoffset="0"
-                                 data-start="2200"
-                                 data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                                 data-speed="500"
-                                 data-easing="Power3.easeInOut"
-                                 data-endspeed="300"
-                                 style="z-index: 2">
-                                <h2>@ViewBag.Advertisings[1].Name</h2>
-                            </div>
-
-                            <div class="slide-p tp-caption black randomrotate skewtoleft tp-resizeme start"
-                                 data-x="center"
-                                 data-hoffset="0"
-                                 data-y="310"
-                                 data-speed="500"
-                                 data-start="1300"
-                                 data-easing="Power3.easeInOut"
-                                 data-splitin="none"
-                                 data-splitout="none"
-                                 data-elementdelay="0.1"
-                                 data-endelementdelay="0.1"
-                                 data-endspeed="500" style="z-index: 6;white-space: pre-line;max-width: 1170px;text-align: center;">
-                                <p class="white">@ViewBag.Advertisings[1].Info</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- End tp-banner-container -->
-        </div><!-- End slideshow -->
+        
 
         @RenderBody()
 

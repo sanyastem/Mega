@@ -577,6 +577,7 @@
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Home\AllDeteils.cshtml" />
     <Content Include="Views\Home\Ditails.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,6 +19,21 @@
     h1{
         color:red;
     }
+    .text-target{
+        float: left;
+        color: red !important;
+        border-color: red !important;
+            height: 45px;
+                border-radius: 5px;
+                padding-left: 15px;
+    }
+    .submit-forms{
+        margin-left: 25px;
+    background: red;
+    height: 40px;
+    border:none;
+    color:#fff;
+    }
 </style>
 <div class="sections section-2" id="fotopech">
     <div class="container">
@@ -31,7 +46,12 @@
                 <h1>@Model[0].Name</h1>
                 <p>@Model[0].Information</p>
                 <p>@Model[0].Price  бел.руб.</p>
-
+                <div>
+                    <form action="/" method="post">
+                        <input class="text-target" type="number" name="kol_vo" value="1" style="float: left;"/>
+                        <input class="submit-forms" type="submit"  value="Добавить в корзину" style="margin-left: 25px;"/>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

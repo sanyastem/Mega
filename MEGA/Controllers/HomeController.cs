@@ -49,6 +49,15 @@ namespace MEGA.Controllers
             }
             
         }
+        public ActionResult Search(string text)
+        {
+            string query = string.Format("SELECT * FROM Products WHERE Products.Name like '%" + text+ "%' OR Products.Information like '%" + text + "%'");
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.Products.SqlQuery(query).ToList());
+            }
+            
+        }
 
     }
 }

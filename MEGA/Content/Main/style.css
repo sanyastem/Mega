@@ -2655,3 +2655,21 @@ blockquote {
 	background-color: #fff;
 	color: #e60000;
 }
+
+.news-block{
+    padding-top: 10px;
+}
+
+@media(min-width:992px) {
+    .news:not(:nth-child(1)) {
+        margin-top: 20px;
+    }
+}
+.news{
+    box-shadow: 0px 0px 25px #c3c3c3;
+}
+
+.view{
+    margin-top: 15px;
+    text-align: center;
+}

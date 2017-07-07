@@ -13,3 +13,8 @@ D:\GitHub\mega\DB\bin\Debug\DB.pdb
 D:\GitHub\mega\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
 D:\GitHub\mega\DB\obj\Debug\DB.dll
 D:\GitHub\mega\DB\obj\Debug\DB.pdb
+D:\1\Mega\DB\bin\Debug\DB.dll
+D:\1\Mega\DB\bin\Debug\DB.pdb
+D:\1\Mega\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+D:\1\Mega\DB\obj\Debug\DB.dll
+D:\1\Mega\DB\obj\Debug\DB.pdb

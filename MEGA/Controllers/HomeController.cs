@@ -73,6 +73,17 @@ namespace MEGA.Controllers
             }
             
         }
+        public void Car(Product pro,int col)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Order ord = new Order();
+                ord.ProductId = pro.Id;
+                ord.oformlen = false;
+                ord.Status = false;
+                context.Orders.Add(ord);
+            }
+        }
 
     }
 }

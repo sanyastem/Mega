@@ -18,6 +18,7 @@ namespace DB
         public Product Product { get; set; }
         public int? NewOrderId { get; set; }
         public NewOrder NewOrder { get; set; }
+        public bool oformlen { get; set; }
         public Order()
         {
         }

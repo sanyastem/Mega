@@ -1,0 +1,46 @@
+﻿@model DB.News
+
+@{
+    ViewBag.Title = "NewsDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Добавить новость</h2>
+
+        </header>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Название
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                Информация
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Info)
+            </dd>
+
+            <dt>
+                Картинка
+            </dt>
+
+            <dd>
+                <img src="@Model.Picture" alt="Alternate Text" />
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Редактировать", "NewsEdit", new { id = Model.Id }) |
+        @Html.ActionLink("Назад", "NewsAll")
+    </p>
+    </section>

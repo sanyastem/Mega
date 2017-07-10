@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DB.GoodsType>
+
+@{
+    ViewBag.Title = "ProductsCreate";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Добавление товара</h2>
+
+        </header>
+
+        @using (Html.BeginForm("ProductsCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+
+
+            <select name="GoodsTypeId">
+
+
+                @foreach (var item in Model)
+                {
+                    <option value="@item.Id" >@item.Name</option>
+
+                }
+            </select>
+            <input type="text" name="Name"/>
+            <textarea name="Information"></textarea>
+            <input type="file" name="uploadImage" />
+            <input type="text" name="Price" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Сохранить" class="btn btn-default" />
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Назад", "ProductAll")
+        </div>
+
+    </div>
+</section>

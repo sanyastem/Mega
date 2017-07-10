@@ -1,0 +1,38 @@
+﻿@model DB.Advertising
+
+@{
+    ViewBag.Title = "AdvertisingDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Просмотр Рекламы</h2>
+
+        </header>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Название
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                Информация
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Info)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Редактировать", "AdvertisingEdit", new { id = Model.Id }) |
+        @Html.ActionLink("Назад", "AdvertisingAll")
+    </p>
+    </section>

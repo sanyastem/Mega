@@ -36,7 +36,7 @@
                          data-easing="Power3.easeInOut"
                          data-endspeed="300"
                          style="z-index: 2">
-                        <h2>@ViewBag.Advertisings[0].Name</h2>
+                        <h2>@ViewBag.Advertisings[1].Name</h2>
                     </div>
 
                     <!-- LAYER NR. 2 -->
@@ -65,7 +65,7 @@
                          data-elementdelay="0.1"
                          data-endelementdelay="0.1"
                          data-endspeed="500" style="z-index: 6;white-space: pre-line;max-width: 1170px;text-align: center;">
-                        <p class="white">@ViewBag.Advertisings[0].Info</p>
+                        <p class="white">@ViewBag.Advertisings[1].Info</p>
                     </div>
 
 
@@ -206,22 +206,22 @@
         <div class="col-md-2 col-xs-12 col-sm-12 news-block">
             <div class="row" style="margin:0">
                 <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>Название новости</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#">Подробнее</a>
+                    <h3>@ViewBag.News[0].Name</h3>
+                    <p>@ViewBag.News[0].Info</p>
+                    <a href="../../Home/NewsDitails/@ViewBag.News[0].Id">Подробнее</a>
                 </div>
                 <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>Название новости</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#">Подробнее</a>
+                    <h3>@ViewBag.News[1].Name</h3>
+                    <p>@ViewBag.News[1].Info</p>
+                    <a href="../../Home/NewsDitails/@ViewBag.News[1].Id">Подробнее</a>
                 </div>
                 <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>Название новости</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <a href="#">Подробнее</a>
+                    <h3>@ViewBag.News[2].Name</h3>
+                    <p>@ViewBag.News[2].Info</p>
+                    <a href="../../Home/NewsDitails/@ViewBag.News[2].Id">Подробнее</a>
                 </div>
             </div>
-            <div class="view"><a href="#">Читать все</a></div>
+            <div class="view"><a href="../../Home/NewsAll">Читать все</a></div>
         </div>
     </div>
 </div>

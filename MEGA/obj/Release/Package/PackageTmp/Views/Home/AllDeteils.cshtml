@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DB.Product>
+
+@{
+    ViewBag.Title = "Товары";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
+<div class="sections section-2" id="fotopech">
+<div class="container">
+    <div class="row">
+        <div class="animation">
+            <div class="portfolio-slide">
+                <ul>
+                    <li>
+                        @foreach (var item in Model)
+                        {
+                            <a href="../../Home/Ditails/@item.Id">
+                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                    <div class="portfolio-one">
+                                        <div class="portfolio-head">
+                                            <div class="portfolio-img"><img alt="" src="@item.Picture"></div>
+                                            <div class="portfolio-hover">
+                                            </div>
+                                        </div><!-- End portfolio-head -->
+                                        <div class="portfolio-content">
+                                            <i class="fa fa-leaf"></i>
+                                            <div class="portfolio-meta">
+                                                <div class="portfolio-name"><h6>@item.Name</h6></div>
+
+                                            </div><!-- End portfolio-meta -->
+                                        </div><!-- End portfolio-content -->
+                                    </div><!-- End portfolio-item -->
+                                </div>
+                            </a>
+                        }
+                    </li>
+                </ul>
+            </div><!-- End portfolio-slide -->
+        </div><!-- End animation -->
+
+    </div><!-- End row -->
+    <div class="animation" data-animate="bounceInRight">
+
+    </div><!-- End animation -->
+</div><!-- End container -->
+</div><!-- End sections -->

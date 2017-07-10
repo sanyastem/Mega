@@ -1,0 +1,47 @@
+﻿@model PagedList.IPagedList<DB.Advertising>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Реклама";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Реклама</h2>
+
+        </header>
+        <p>
+            @Html.ActionLink("Добавить", "AdvertisingCreate")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    Название
+                </th>
+                <th>
+                    Информация
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Info)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Редактировать", "AdvertisingEdit", new { id = item.Id }) |
+                        @Html.ActionLink("Детали", "AdvertisingDetails", new { id = item.Id }) |
+                        @Html.ActionLink("Удалить", "AdvertisingDelete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            Страница @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) из @Model.PageCount
+            @Html.PagedListPager(Model, page => Url.Action("AdvertisingAll", new { page }))
+        </table>
+    </div>
+</section>

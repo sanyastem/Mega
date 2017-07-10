@@ -24,10 +24,25 @@ namespace MEGA.Controllers
                 ViewBag.one3 = context.Products.Where(x => x.GoodsTypeId == 4).ToList();
                 ViewBag.one4 = context.Products.Where(x => x.GoodsTypeId == 5).ToList();
                 ViewBag.suvenir = context.GoodsTypes.ToList();
-
+                ViewBag.News = context.Newss.OrderByDescending(x => x.Id).ToList();
                 return View();
             }
             
+            
+        }
+        public ActionResult NewsDitails(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.Newss.Where(x=>x.Id == id).ToList());
+            }
+        }
+        public ActionResult NewsAll()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.Newss.ToList());
+            }
         }
         public ActionResult Services()
         {

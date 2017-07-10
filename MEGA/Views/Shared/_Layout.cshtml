@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
@@ -36,15 +37,34 @@
         <header id="header-top">
             <div class="container clearfix">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-9">
                         <div class="phone-email"><i class="fa fa-phone"></i>+375 (33) 65 44 777</div>
                         <div class="phone-email phone-email-2"><i class="fa fa-envelope"></i>info@fotocenter.by</div>
-                        @if (User.Identity.Name == "somemail@mail.ru")
-                        {
-                            <div class="admin"><a href="@Url.Content("~/Admin")">Администратор</a></div>
-                        }
+                        
+                            @if (Request.IsAuthenticated && User.Identity.Name == "somemail@mail.ru")
+                            {
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                <div class="admin"><a href="@Url.Content("~/Admin")">Здравствуйте Администратор</a><a href="javascript:document.getElementById('logoutForm').submit()" style="margin-left: 20px;">Выйти</a></div>
+                                    }
+                                    }
+                                    else if (User.Identity.IsAuthenticated)
+                                    {
+                                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                    {
+                                    @Html.AntiForgeryToken()
+                                    <div class="admin">Здравствуйте @User.Identity.GetUserName()<a href="javascript:document.getElementById('logoutForm').submit()"  style="margin-left: 20px;">Выйти</a></div>
 
-                    </div>
+                                    }
+                                    }
+                                    else{
+                                    <div class="admin">Здравствуйте Гость
+                                    <a href="@Url.Content("~/Account/Login")"  style="margin-left: 20px;">Вход</a>
+                                    <a href="@Url.Content("~/Account/Register")"  style="margin-left: 20px;">Регистрация</a></div>
+                                    }
+
+                                </div>
                 </div>
             </div><!-- End container -->
         </header><!-- End header -->
@@ -106,6 +126,8 @@
     <script src="@Url.Content("~/Content/Main/js/jquery.themepunch.revolution.min.js")"></script>
     <script src="@Url.Content("~/Content/Main/js/custom.js")"></script>
     <!-- End js -->
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

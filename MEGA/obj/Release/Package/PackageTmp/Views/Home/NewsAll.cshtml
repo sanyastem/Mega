@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DB.News>
+
+@{
+    ViewBag.Title = "Новости";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .news h3,.news a{
+        text-align:center;
+        display: inherit;
+    }
+</style>
+<div class="sections section-2" id="fotopech">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12 col-xs-12 col-sm-12 news-block">
+                    <div class="row" style="margin:0">
+                        <div class="col-md-12 col-xs-4 col-sm-4 news">
+                            <h3>@item.Name</h3>
+                            <p>@item.Info</p>
+                            <a href="../../Home/NewsDitails/@item.Id">Подробнее</a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+

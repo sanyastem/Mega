@@ -1,0 +1,35 @@
+﻿@model List<DB.News>
+
+@{
+    ViewBag.Title = Model[0].Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .block-txt h1{
+        text-align:center;
+        color: #000;
+    margin: 20px;
+    }
+    .img-product{
+        width: 50%;
+    margin: 0 auto;
+    display: block;
+    }
+    .block-txt p{
+        font-size: 18px;
+    }
+</style>
+<div class="sections section-2" id="fotopech">
+    <div class="container">
+        <div class="row">
+            <div class="block-img">
+                <img class="img-product" src="@Model[0].Picture" alt="@Model[0].Name" />
+            </div>
+            <div class="block-txt">
+
+                <h1>@Model[0].Name</h1>
+                <p>@Model[0].Info</p>
+            </div>
+        </div>
+    </div>
+</div>

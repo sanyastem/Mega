@@ -47,8 +47,8 @@
                 <p>@Model[0].Information</p>
                 <p>@Model[0].Price  бел.руб.</p>
                 <div>
-                    <form action="/" method="post">
-                        <input class="text-target" type="number" name="kol_vo" value="1" style="float: left;"/>
+                    <form action="../../Home/Basket/@Model[0].Id" method="post">
+                        <input class="text-target" type="number" name="col" value="1" style="float: left;"/>
                         <input class="submit-forms" type="submit"  value="Добавить в корзину" style="margin-left: 25px;"/>
                     </form>
                 </div>

@@ -584,6 +584,7 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\NewsDitails.cshtml" />
     <Content Include="Views\Home\NewsAll.cshtml" />
+    <Content Include="Views\Home\BasketAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

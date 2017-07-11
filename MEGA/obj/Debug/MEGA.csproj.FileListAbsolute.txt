@@ -451,3 +451,4 @@ D:\1\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\1\Mega\MEGA\obj\Debug\MEGA.dll
 D:\1\Mega\MEGA\obj\Debug\MEGA.pdb
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
+d:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources

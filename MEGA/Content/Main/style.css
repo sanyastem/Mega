@@ -2673,3 +2673,40 @@ blockquote {
     margin-top: 15px;
     text-align: center;
 }
+
+#loginForm{
+    width: 250px;
+    margin: auto;
+}
+
+.red-btn{
+    background: red;
+    height: 40px;
+    border: none;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+#registerForm{
+    width: 250px;
+    margin: auto;
+}
+
+#registerForm input{
+    width: 250px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.header-search-form form{
+    display:flex;
+}
+
+.header-search-form{
+    width: 230px;
+}
+
+.header-search-form form input[type="submit"]{
+    margin-right:5px;
+}

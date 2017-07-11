@@ -2698,3 +2698,15 @@ blockquote {
     margin: auto;
     margin-bottom: 15px;
 }
+
+.header-search-form form{
+    display:flex;
+}
+
+.header-search-form{
+    width: 230px;
+}
+
+.header-search-form form input[type="submit"]{
+    margin-right:5px;
+}

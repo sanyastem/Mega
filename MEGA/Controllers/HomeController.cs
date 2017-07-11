@@ -3,8 +3,11 @@ using MEGA.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace MEGA.Controllers
 {
@@ -73,17 +76,29 @@ namespace MEGA.Controllers
             }
             
         }
-        public void Car(Product pro,int col)
+        public ActionResult Basket(int id,int col)
+        {
+             using (var context = new ApplicationDbContext())
+            {
+                Order ord = new Order();
+                ord.ProductId = id;
+                ord.oformlen = true;
+                ord.Status = false;
+                ord.DateOrder = DateTime.Now;
+
+                context.Orders.Add(ord);
+                context.SaveChanges();
+                return RedirectToAction("Ditails/"+id);
+            }
+        }
+        public ActionResult BasketAll()
         {
             using (var context = new ApplicationDbContext())
             {
-                Order ord = new Order();
-                ord.ProductId = pro.Id;
-                ord.oformlen = false;
-                ord.Status = false;
-                context.Orders.Add(ord);
+                return View(context.Orders.Where(x=>x.AspNetUserId.ToString() == User.Identity.GetUserId() && x.oformlen == false));
             }
         }
+        
 
     }
 }

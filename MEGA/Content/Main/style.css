@@ -2710,3 +2710,16 @@ blockquote {
 .header-search-form form input[type="submit"]{
     margin-right:5px;
 }
+
+.fontss{
+    font-size: 24px;
+    margin-top: 10px;
+    color:red;
+}
+
+.fontss span{
+    position: relative;
+    top: -14px;
+    left: 2px;
+}
+

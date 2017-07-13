@@ -113,3 +113,4 @@ D:\GitHub\mega\MEGA\obj\Release\MEGA.Migrations.MegaMigration.resources
 D:\GitHub\mega\MEGA\obj\Release\MEGA.csproj.GenerateResource.Cache
 D:\GitHub\mega\MEGA\obj\Release\MEGA.dll
 D:\GitHub\mega\MEGA\obj\Release\MEGA.pdb
+D:\GitHub\mega\MEGA\obj\Release\MEGA.Migrations.mega.resources

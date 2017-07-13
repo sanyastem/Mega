@@ -116,4 +116,4 @@ mark {	display: inline;	padding: 2px 4px;	background-color: #f6f2d6;	color:#
 	-ms-transition: all 0.2s ease-in;
 	-o-transition: all 0.2s ease-in;
 	transition: all 0.2s ease-in;
-}a {   text-decoration: none;}/* Images  */img {	max-width: 100%;	-moz-box-sizing: border-box;	-ms-box-sizing: border-box;	-o-box-sizing: border-box;	-webkit-box-sizing: border-box;	box-sizing: border-box;	vertical-align: middle;	height: auto;}
+}a {   text-decoration: none !important;   color:#000 !important;}/* Images  */img {	max-width: 100%;	-moz-box-sizing: border-box;	-ms-box-sizing: border-box;	-o-box-sizing: border-box;	-webkit-box-sizing: border-box;	box-sizing: border-box;	vertical-align: middle;	height: auto;}

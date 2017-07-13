@@ -2,3 +2,4 @@ D:\GitHub\mega\DB\bin\Release\DB.dll
 D:\GitHub\mega\DB\bin\Release\DB.pdb
 D:\GitHub\mega\DB\obj\Release\DB.dll
 D:\GitHub\mega\DB\obj\Release\DB.pdb
+D:\GitHub\mega\DB\obj\Release\DB.csprojResolveAssemblyReference.cache

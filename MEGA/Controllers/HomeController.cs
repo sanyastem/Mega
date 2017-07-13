@@ -13,6 +13,22 @@ namespace MEGA.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+
+                    if (context.Orders.Count() != 0)
+                    {
+                        ViewBag.col = context.Orders.Count();
+                    }
+                    else
+                    {
+                        ViewBag.col = 0;
+                    }
+            }
+            
+        }
         public ActionResult Index()
         {
             using (var context = new ApplicationDbContext())
@@ -82,10 +98,10 @@ namespace MEGA.Controllers
             {
                 Order ord = new Order();
                 ord.ProductId = id;
-                ord.oformlen = true;
+                ord.oformlen = false;
                 ord.Status = false;
                 ord.DateOrder = DateTime.Now;
-
+                ord.AspNetUserId = Guid.Parse(User.Identity.GetUserId());
                 context.Orders.Add(ord);
                 context.SaveChanges();
                 return RedirectToAction("Ditails/"+id);
@@ -93,12 +109,24 @@ namespace MEGA.Controllers
         }
         public ActionResult BasketAll()
         {
-            using (var context = new ApplicationDbContext())
+            if (User.Identity.IsAuthenticated)
             {
-                return View(context.Orders.Where(x=>x.AspNetUserId.ToString() == User.Identity.GetUserId() && x.oformlen == false));
+                using (var context = new ApplicationDbContext())
+                {
+                        return View(context.Orders.Where(x => /*x.AspNetUserId == Guid.Parse(User.Identity.GetUserId()) &&*/ x.oformlen == false).ToList());
+                }
+            }
+            else
+            {
+                return Redirect("~/Account/Login");
             }
         }
-        
+        public ActionResult BasketBuy()
+        {
+            return View();
+        }
+
+
 
     }
 }

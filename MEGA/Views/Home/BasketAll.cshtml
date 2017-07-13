@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DB.Order>
+﻿@model IEnumerable<DB.Product>
 
 @{
     ViewBag.Title = "Корзина";
@@ -17,13 +17,13 @@
                         @try
                         {
                             <td>
-                                @Html.DisplayFor(modelItem => item.Product.Name)
+                                @Html.DisplayFor(modelItem => item.Name)
                             </td>
                         }
                         catch (Exception)
                         {
                             <td>
-                                @Html.DisplayFor(modelItem => item.NewOrder.Name)
+                                @Html.DisplayFor(modelItem => item.Name)
                             </td>
                         }
                         <td>

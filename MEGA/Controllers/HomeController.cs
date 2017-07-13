@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 
 namespace MEGA.Controllers
 {
@@ -113,7 +114,21 @@ namespace MEGA.Controllers
             {
                 using (var context = new ApplicationDbContext())
                 {
-                        return View(context.Orders.Where(x => /*x.AspNetUserId == Guid.Parse(User.Identity.GetUserId()) &&*/ x.oformlen == false).ToList());
+                    Guid users = Guid.Parse(User.Identity.GetUserId());
+
+                    var s = context.Orders.Where(x => x.AspNetUserId == users && x.oformlen == false).ToList();
+                    List<Product> odi = new List<Product>();
+                    foreach (var item in s)
+                    {
+                        foreach (var items in context.Products.ToList())
+                        {
+                            if (item.ProductId == items.Id)
+                            {
+                                odi.Add(items);
+                            }
+                        }
+                    }
+                        return View(odi);
                 }
             }
             else
@@ -121,8 +136,24 @@ namespace MEGA.Controllers
                 return Redirect("~/Account/Login");
             }
         }
-        public ActionResult BasketBuy()
+        public ActionResult BasketBuy(int[] id)
         {
+            List<Order> ord = new List<Order>();
+            using (var context = new ApplicationDbContext())
+            {
+                foreach (var item in id)
+                {
+                    ord.AddRange(context.Orders.Where(x => x.ProductId == item).ToList());
+                    
+                }
+                foreach (var item in ord)
+                {
+                    item.oformlen = true;
+                    context.Entry(item).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+            }
+            
             return View();
         }
 

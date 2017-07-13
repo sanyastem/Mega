@@ -10,6 +10,11 @@
     li{
         list-style-type: none;
     }
+    .news-block{
+            position: absolute;
+    z-index: 9999;
+    left: 83%;
+    }
 </style>
 <div class="clearfix"></div>
 <div class="slideshow">
@@ -116,10 +121,29 @@
         </div>
     </div><!-- End tp-banner-container -->
 </div><!-- End slideshow -->
-
+<div class="col-md-2 col-xs-12 col-sm-12 news-block">
+    <div class="row" style="margin:0">
+        <div class="col-md-12 col-xs-4 col-sm-4 news">
+            <h3>@ViewBag.News[0].Name</h3>
+            <p>@ViewBag.News[0].Info</p>
+            <a href="../../Home/NewsDitails/@ViewBag.News[0].Id">Подробнее</a>
+        </div>
+        <div class="col-md-12 col-xs-4 col-sm-4 news">
+            <h3>@ViewBag.News[1].Name</h3>
+            <p>@ViewBag.News[1].Info</p>
+            <a href="../../Home/NewsDitails/@ViewBag.News[1].Id">Подробнее</a>
+        </div>
+        <div class="col-md-12 col-xs-4 col-sm-4 news">
+            <h3>@ViewBag.News[2].Name</h3>
+            <p>@ViewBag.News[2].Info</p>
+            <a href="../../Home/NewsDitails/@ViewBag.News[2].Id">Подробнее</a>
+        </div>
+    </div>
+    <div class="view"><a href="../../Home/NewsAll">Читать все</a></div>
+</div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 col-xs-12 col-sm-12">
+        <div class="col-md-12 col-xs-12 col-sm-12">
             <div class="sections section-2" id="fotopech">
                 <div class="container">
                     <div class="animation">
@@ -203,26 +227,7 @@
                 </div><!-- End container -->
             </div><!-- End sections -->
         </div>
-        <div class="col-md-2 col-xs-12 col-sm-12 news-block">
-            <div class="row" style="margin:0">
-                <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>@ViewBag.News[0].Name</h3>
-                    <p>@ViewBag.News[0].Info</p>
-                    <a href="../../Home/NewsDitails/@ViewBag.News[0].Id">Подробнее</a>
-                </div>
-                <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>@ViewBag.News[1].Name</h3>
-                    <p>@ViewBag.News[1].Info</p>
-                    <a href="../../Home/NewsDitails/@ViewBag.News[1].Id">Подробнее</a>
-                </div>
-                <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>@ViewBag.News[2].Name</h3>
-                    <p>@ViewBag.News[2].Info</p>
-                    <a href="../../Home/NewsDitails/@ViewBag.News[2].Id">Подробнее</a>
-                </div>
-            </div>
-            <div class="view"><a href="../../Home/NewsAll">Читать все</a></div>
-        </div>
+       
     </div>
 </div>
 <div class="sections" id="fotoknig">
@@ -235,7 +240,7 @@
         </div><!-- End animation -->
         <div class="row">
             <div class="animation" data-animate="bounceInUp">
-                <div class="portfolio-slide bxslider-slide">
+                <div class="portfolio-slide">
                     <ul>
                         <li>
                             @for (int i = 0; i < 4; i++)
@@ -284,7 +289,7 @@
         </div><!-- End animation -->
         <div class="row">
             <div class="animation" data-animate="bounceInUp">
-                <div class="portfolio-slide bxslider-slide">
+                <div class="portfolio-slide">
                     <ul>
                         <li>
                             @for (int i = 0; i < 4; i++)

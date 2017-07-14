@@ -1,4 +1,7 @@
 ﻿@using Microsoft.AspNet.Identity
+@using DB
+@using System.Data.Entity
+@using MEGA.Models
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
@@ -65,7 +68,21 @@
                                     }
 
                                 </div>
-                    <div class="col-md-offset-2 col-md-1"><a href="@Url.Content("~/Home/BasketAll")"><i class="fa fa-shopping-cart fontss" aria-hidden="true"><span class="badge">@ViewBag.col</span></i></a></div>
+                    @using (var context = new ApplicationDbContext())
+                    {
+                        Guid users = Guid.Parse(User.Identity.GetUserId());
+                        if (User.Identity.IsAuthenticated && context.Orders.Where(x => x.AspNetUserId == users && x.oformlen == false).Count() > 0)
+                        {
+
+                            <div class="col-md-offset-2 col-md-1 ara"><a href="@Url.Content("~/Home/BasketAll")"><i class="fa fa-shopping-cart fontss" aria-hidden="true"><span class="badge">@context.Orders.Where(x => x.AspNetUserId == users && x.oformlen == false).Count()</span></i></a></div>
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    
+                    
                 </div>
             </div><!-- End container -->
         </header><!-- End header -->

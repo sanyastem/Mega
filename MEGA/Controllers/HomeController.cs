@@ -89,6 +89,7 @@ namespace MEGA.Controllers
             string query = string.Format("SELECT * FROM Products WHERE Products.Name like '%" + text+ "%' OR Products.Information like '%" + text + "%'");
             using (var context = new ApplicationDbContext())
             {
+                ViewBag.Counts = context.Products.SqlQuery(query).ToList().Count;
                 return View(context.Products.SqlQuery(query).ToList());
             }
             

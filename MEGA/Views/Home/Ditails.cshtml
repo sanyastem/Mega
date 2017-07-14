@@ -48,7 +48,7 @@
                 <p>@Model[0].Price  бел.руб.</p>
                 <div>
 
-                    <form action="../../Home/Basket/@Model[0].Id" method="post">
+                    <form action="@Url.Content("~/Home/Basket/"+ Model[0].Id)" method="post">
                         <input class="text-target" type="number" name="col" value="1" style="float: left;"/>
                         <input class="submit-forms" type="submit"  value="Добавить в корзину" style="margin-left: 25px;"/>
                     </form>

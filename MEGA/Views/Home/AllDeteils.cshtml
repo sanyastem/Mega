@@ -18,7 +18,7 @@
                     <li>
                         @foreach (var item in Model)
                         {
-                            <a href="../../Home/Ditails/@item.Id">
+                            <a href="@Url.Content("~/Home/Ditails/"+ item.Id)">
                                 <div class="col-md-3 col-md-offset-1 portfolio-item">
                                     <div class="portfolio-one">
                                         <div class="portfolio-head">

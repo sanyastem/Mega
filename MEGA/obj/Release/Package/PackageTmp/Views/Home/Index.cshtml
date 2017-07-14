@@ -10,6 +10,11 @@
     li{
         list-style-type: none;
     }
+    .news-block{
+            position: absolute;
+    z-index: 9999;
+    left: 83%;
+    }
 </style>
 <div class="clearfix"></div>
 <div class="slideshow">
@@ -116,10 +121,29 @@
         </div>
     </div><!-- End tp-banner-container -->
 </div><!-- End slideshow -->
-
+<div class="col-md-2 col-xs-12 col-sm-12 news-block">
+    <div class="row" style="margin:0">
+        <div class="col-md-12 col-xs-4 col-sm-4 news">
+            <h3>@ViewBag.News[0].Name</h3>
+            <p>@ViewBag.News[0].Info</p>
+            <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">Подробнее</a>
+        </div>
+        <div class="col-md-12 col-xs-4 col-sm-4 news">
+            <h3>@ViewBag.News[1].Name</h3>
+            <p>@ViewBag.News[1].Info</p>
+            <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">Подробнее</a>
+        </div>
+        <div class="col-md-12 col-xs-4 col-sm-4 news">
+            <h3>@ViewBag.News[2].Name</h3>
+            <p>@ViewBag.News[2].Info</p>
+            <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[2].Id)">Подробнее</a>
+        </div>
+    </div>
+    <div class="view"><a href="@Url.Content("~/Home/NewsAll/")">Читать все</a></div>
+</div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-10 col-xs-12 col-sm-12">
+        <div class="col-md-12 col-xs-12 col-sm-12">
             <div class="sections section-2" id="fotopech">
                 <div class="container">
                     <div class="animation">
@@ -133,7 +157,7 @@
                             <div class="portfolio-slide">
                                 <ul>
                                     <li>
-                                        <a href="../../AllDeteils/@ViewBag.pechat1[0].Id">
+                                        <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat1[0].Id)">
                                             <div class="col-md-3 col-md-offset-1 portfolio-item">
                                                 <div class="portfolio-one">
                                                     <div class="portfolio-head">
@@ -153,7 +177,7 @@
                                                 </div><!-- End portfolio-item -->
                                             </div>
                                         </a>
-                                        <a href="../../AllDeteils/@ViewBag.pechat2[0].Id">
+                                        <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat2[0].Id)">
                                             <div class="col-md-3 col-md-offset-1 portfolio-item">
                                                 <div class="portfolio-one">
                                                     <div class="portfolio-head">
@@ -172,7 +196,7 @@
                                                 </div><!-- End portfolio-item -->
                                             </div>
                                         </a>
-                                        <a href="../../AllDeteils/@ViewBag.pechat3[0].Id">
+                                        <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat3[0].Id)">
                                             <div class="col-md-3 col-md-offset-1 portfolio-item">
                                                 <div class="portfolio-one">
                                                     <div class="portfolio-head">
@@ -203,26 +227,7 @@
                 </div><!-- End container -->
             </div><!-- End sections -->
         </div>
-        <div class="col-md-2 col-xs-12 col-sm-12 news-block">
-            <div class="row" style="margin:0">
-                <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>@ViewBag.News[0].Name</h3>
-                    <p>@ViewBag.News[0].Info</p>
-                    <a href="../../Home/NewsDitails/@ViewBag.News[0].Id">Подробнее</a>
-                </div>
-                <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>@ViewBag.News[1].Name</h3>
-                    <p>@ViewBag.News[1].Info</p>
-                    <a href="../../Home/NewsDitails/@ViewBag.News[1].Id">Подробнее</a>
-                </div>
-                <div class="col-md-12 col-xs-4 col-sm-4 news">
-                    <h3>@ViewBag.News[2].Name</h3>
-                    <p>@ViewBag.News[2].Info</p>
-                    <a href="../../Home/NewsDitails/@ViewBag.News[2].Id">Подробнее</a>
-                </div>
-            </div>
-            <div class="view"><a href="../../Home/NewsAll">Читать все</a></div>
-        </div>
+       
     </div>
 </div>
 <div class="sections" id="fotoknig">
@@ -235,13 +240,13 @@
         </div><!-- End animation -->
         <div class="row">
             <div class="animation" data-animate="bounceInUp">
-                <div class="portfolio-slide bxslider-slide">
+                <div class="portfolio-slide">
                     <ul>
                         <li>
                             @for (int i = 0; i < 4; i++)
                             {
 
-                            <a href="../../Home/Ditails/@ViewBag.one3[i].Id">
+                            <a href="@Url.Content("~/Home/Ditails/"+ViewBag.one3[i].Id)">
                                 <div class="col-md-3 portfolio-item">
                                     <div class="portfolio-one">
                                         <div class="portfolio-head">
@@ -270,7 +275,7 @@
 
         </div><!-- End animation -->
         <div class="she">
-            <a class="moreProducts" href="../../Home/AllDeteils/4">Подробнее</a>
+            <a class="moreProducts" href="@Url.Content("~/Home/Ditails/"+4)">Подробнее</a>
         </div>
     </div><!-- End container -->
 </div><!-- End sections -->
@@ -284,12 +289,12 @@
         </div><!-- End animation -->
         <div class="row">
             <div class="animation" data-animate="bounceInUp">
-                <div class="portfolio-slide bxslider-slide">
+                <div class="portfolio-slide">
                     <ul>
                         <li>
                             @for (int i = 0; i < 4; i++)
                             {
-                                <a href="../../Home/Ditails/@ViewBag.one4[i].Id">
+                                <a href="@Url.Content("~/Home/Ditails/"+ViewBag.one4[i].Id)">
                                     <div class="col-md-3 portfolio-item">
                                         <div class="portfolio-one">
                                             <div class="portfolio-head">
@@ -318,7 +323,7 @@
 
         </div><!-- End animation -->
         <div class="she">
-            <a class="moreProducts" href="../../Home/AllDeteils/5">Подробнее</a>
+            <a class="moreProducts" href="@Url.Content("~/Home/AllDeteils/"+5)">Подробнее</a>
         </div>
     </div><!-- End container -->
 </div><!-- End sections -->
@@ -339,7 +344,7 @@
                         <li>
                             @for (int i = 5; i < ViewBag.suvenir.Count; i++)
                             {
-                                <a href="../../Home/AllDeteils/@ViewBag.suvenir[i].Id">
+                                <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.suvenir[i].Id)">
                                     <div class="col-md-4">
                                         <div class="box-icon">
                                             <div class="box-icon-i box-icon-i-2"><i class="fa fa-heart"></i></div>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DB.Order>
+﻿@model IEnumerable<DB.Product>
 
 @{
     ViewBag.Title = "Корзина";
@@ -7,31 +7,42 @@
 <div class="sections section-2" id="fotopech">
     <div class="container">
         <div class="row">
+            
             <table class="table">
 
 
                 @foreach (var item in Model)
                 {
                     <tr>
+                        
                         @try
                         {
                             <td>
-                                @Html.DisplayFor(modelItem => item.Product.Name)
+                                @Html.DisplayFor(modelItem => item.Name)
                             </td>
                         }
                         catch (Exception)
                         {
                             <td>
-                                @Html.DisplayFor(modelItem => item.NewOrder.Name)
+                                @Html.DisplayFor(modelItem => item.Name)
                             </td>
                         }
                         <td>
                             @Html.DisplayFor(modelItem => item.Price)
                         </td>
                     </tr>
+                    
                 }
 
-            </table>
+</table>
             </div>
+        <form action="@Url.Content("~/Home/BasketBuy")" method="post">
+            @foreach (var item in Model)
+            {
+                <input type="hidden" name="id" value="@item.Id" />
+            }
+            
+            <input type="submit" name="name" value="Оформить заказ" />
+        </form>
 </div>
 </div>

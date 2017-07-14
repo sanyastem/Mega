@@ -154,7 +154,7 @@ namespace MEGA.Controllers
                 }
             }
             
-            return View();
+            return Redirect("~/Home/BasketAll");
         }
 
 

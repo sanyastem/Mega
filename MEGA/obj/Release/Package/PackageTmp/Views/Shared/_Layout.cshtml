@@ -65,17 +65,17 @@
                                     }
 
                                 </div>
-                    <div class="col-md-offset-2 col-md-1"><a href="@Url.Content("~/Home/BasketAll")"><i class="fa fa-shopping-cart fontss" aria-hidden="true"><span class="badge">42</span></i></a></div>
+                    <div class="col-md-offset-2 col-md-1"><a href="@Url.Content("~/Home/BasketAll")"><i class="fa fa-shopping-cart fontss" aria-hidden="true"><span class="badge">@ViewBag.col</span></i></a></div>
                 </div>
             </div><!-- End container -->
         </header><!-- End header -->
         <header id="header">
             <div class="container clearfix">
-                <div class="logo"><a href="../../"><img src="@Url.Content("~/Content/Main/images/logo.png")" alt="Mega"></a></div>
+                <div class="logo"><a href="@Url.Content("~")"><img src="@Url.Content("~/Content/Main/images/logo.png")" alt="Mega"></a></div>
                 <div class="header-search">
                     <div class="header-search-a"><i class="fa fa-search"></i></div>
                     <div class="header-search-form">
-                        <form action="../../Home/Search" method="get">
+                        <form action="@Url.Content("~/Home/Search")" method="get">
                             <input type="text" name="text" placeholder="Поиск по сайту">
                             <input type="submit"  value="Поиск" />
                         </form>
@@ -83,7 +83,7 @@
                 </div>
                 <nav class="navigation">
                     <ul>
-                        <li><a href="../../">Главная</a></li>
+                        <li><a href="@Url.Content("~")">Главная</a></li>
                         <li><a href="#fotopech">Фотопечать</a></li>
                         <li><a href="#fotoknig">Фотокниги</a></li>
                         <li><a href="#vypusk">Выпускные альбомы</a></li>

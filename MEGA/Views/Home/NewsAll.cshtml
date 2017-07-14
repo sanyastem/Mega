@@ -20,7 +20,7 @@
                         <div class="col-md-12 col-xs-4 col-sm-4 news">
                             <h3>@item.Name</h3>
                             <p>@item.Info</p>
-                            <a href="../../Home/NewsDitails/@item.Id">Подробнее</a>
+                            <a href="@Url.Content("~/Home/NewsDitails/"+item.Id)">Подробнее</a>
                         </div>
                         
                     </div>

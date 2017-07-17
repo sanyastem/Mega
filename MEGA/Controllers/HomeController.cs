@@ -96,17 +96,24 @@ namespace MEGA.Controllers
         }
         public ActionResult Basket(int id,int col)
         {
-             using (var context = new ApplicationDbContext())
+            if (User.Identity.IsAuthenticated)
             {
-                Order ord = new Order();
-                ord.ProductId = id;
-                ord.oformlen = false;
-                ord.Status = false;
-                ord.DateOrder = DateTime.Now;
-                ord.AspNetUserId = Guid.Parse(User.Identity.GetUserId());
-                context.Orders.Add(ord);
-                context.SaveChanges();
-                return RedirectToAction("Ditails/"+id);
+                 using (var context = new ApplicationDbContext())
+                {
+                    Order ord = new Order();
+                    ord.ProductId = id;
+                    ord.oformlen = false;
+                    ord.Status = false;
+                    ord.DateOrder = DateTime.Now;
+                    ord.AspNetUserId = Guid.Parse(User.Identity.GetUserId());
+                    context.Orders.Add(ord);
+                    context.SaveChanges();
+                    return RedirectToAction("Ditails/"+id);
+                }
+            }
+            else
+            {
+                return Redirect("~/Account/Login");
             }
         }
         public ActionResult BasketAll()
@@ -158,7 +165,10 @@ namespace MEGA.Controllers
             return Redirect("~/Home/BasketAll");
         }
 
-
+        public ActionResult Contact()
+        {
+            return View();
+        }
 
     }
 }

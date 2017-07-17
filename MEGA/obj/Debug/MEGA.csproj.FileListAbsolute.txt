@@ -452,3 +452,8 @@ D:\1\Mega\MEGA\obj\Debug\MEGA.dll
 D:\1\Mega\MEGA\obj\Debug\MEGA.pdb
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
 d:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
+F:\GitHub\Mega\MEGA\bin\PagedList.dll
+F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.dll
+F:\GitHub\Mega\MEGA\bin\PagedList.xml
+F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.xml
+F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources

@@ -70,11 +70,20 @@
                                 </div>
                     @using (var context = new ApplicationDbContext())
                     {
+                        if (User.Identity.IsAuthenticated)
+                        {
+
+                      
                         Guid users = Guid.Parse(User.Identity.GetUserId());
                         if (User.Identity.IsAuthenticated && context.Orders.Where(x => x.AspNetUserId == users && x.oformlen == false).Count() > 0)
                         {
 
                             <div class="col-md-offset-2 col-md-1 ara"><a href="@Url.Content("~/Home/BasketAll")"><i class="fa fa-shopping-cart fontss" aria-hidden="true"><span class="badge">@context.Orders.Where(x => x.AspNetUserId == users && x.oformlen == false).Count()</span></i></a></div>
+                            }
+                            else
+                            {
+
+                            }
                         }
                         else
                         {
@@ -106,7 +115,7 @@
                         <li><a href="#vypusk">Выпускные альбомы</a></li>
                         <li><a href="#suvenir">Сувениры</a></li>
                         <li><a href="@Url.Content("~/Home/Services")">Услуги</a></li>
-                        <li><a href="#contact">Контакты</a></li>
+                        <li><a href="@Url.Content("~/Home/Contact")">Контакты</a></li>
                     </ul>
                 </nav><!-- End navigation -->
             </div><!-- End container -->

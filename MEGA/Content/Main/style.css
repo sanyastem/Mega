@@ -2666,7 +2666,8 @@ blockquote {
     }
 }
 .news{
-    box-shadow: 0px 0px 25px #c3c3c3;
+    border-bottom:2px solid #e60000;
+    margin-bottom:20px;
 }
 
 .view{
@@ -2687,7 +2688,12 @@ blockquote {
     margin-top: 10px;
     margin-bottom:10px;
 }
-
+.news:hover{
+    outline:solid;
+}
+.pad{
+    margin-bottom:15px;
+}
 #registerForm{
     width: 250px;
     margin: auto;

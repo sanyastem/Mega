@@ -10,11 +10,7 @@
     li{
         list-style-type: none;
     }
-    .news-block{
-            position: absolute;
-    z-index: 9999;
-    left: 83%;
-    }
+    
 </style>
 <div class="clearfix"></div>
 <div class="slideshow">
@@ -121,33 +117,13 @@
         </div>
     </div><!-- End tp-banner-container -->
 </div><!-- End slideshow -->
-<div class="col-md-2 col-xs-12 col-sm-12 news-block">
-    <div class="row" style="margin:0">
-        <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">
-            <div class="col-md-12 col-xs-4 col-sm-4 news">
-                <img class="pad col-md-6" src="@ViewBag.News[0].Picture" alt="@ViewBag.News[0].Name" />
-                <p class="col-md-2">@ViewBag.News[0].Name</p>
-            </div>
-        </a>
-        <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">
-            <div class="col-md-12 col-xs-4 col-sm-4 news">
-                <img class="pad col-md-6" src="@ViewBag.News[1].Picture" alt="@ViewBag.News[1].Name" />
-                <p class="col-md-2">@ViewBag.News[1].Name</p>
-            </div>
-        </a>
-        <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[2].Id)">
-            <div class="col-md-12 col-xs-4 col-sm-4 news">
-                <img class="pad col-md-6" src="@ViewBag.News[2].Picture" alt="@ViewBag.News[2].Name" />
-                <p class="col-md-2">@ViewBag.News[2].Name</p>
-            </div>
-        </a>
-    </div>
-    <div class="view"><a href="@Url.Content("~/Home/NewsAll/")">Читать все</a></div>
-</div>
-<div class="container-fluid">
+
+
+<div class="section-2">
+<div class="container">
     <div class="row">
         <div class="col-md-12 col-xs-12 col-sm-12">
-            <div class="sections section-2" id="fotopech">
+            <div class="sections" id="fotopech">
                 <div class="container">
                     <div class="animation">
                         <div class="sections-title">
@@ -156,82 +132,106 @@
                         </div><!-- End sections-title -->
                     </div><!-- End animation -->
                     <div class="row">
-                        <div class="animation">
-                            <div class="portfolio-slide">
-                                <ul>
-                                    <li>
-                                        <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat1[0].Id)">
-                                            <div class="col-md-3 col-md-offset-1 portfolio-item">
-                                                <div class="portfolio-one">
-                                                    <div class="portfolio-head">
-                                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                                        <div class="portfolio-hover">
+                        <div class="col-md-10 col-xs-12 col-sm-12">
+                            <div class="animation">
+                                <div class="portfolio-slide">
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat1[0].Id)">
+                                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                                    <div class="portfolio-one">
+                                                        <div class="portfolio-head">
+                                                            <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
+                                                            <div class="portfolio-hover">
 
-                                                        </div>
-                                                    </div><!-- End portfolio-head -->
+                                                            </div>
+                                                        </div><!-- End portfolio-head -->
 
-                                                    <div class="portfolio-content">
-                                                        <i class="fa fa-leaf"></i>
-                                                        <div class="portfolio-meta">
-                                                            <div class="portfolio-name"><h6>@ViewBag.pechat1[0].Name</h6></div>
+                                                        <div class="portfolio-content">
+                                                            <i class="fa fa-leaf"></i>
+                                                            <div class="portfolio-meta">
+                                                                <div class="portfolio-name"><h6>@ViewBag.pechat1[0].Name</h6></div>
 
-                                                        </div><!-- End portfolio-meta -->
-                                                    </div><!-- End portfolio-content -->
-                                                </div><!-- End portfolio-item -->
-                                            </div>
-                                        </a>
-                                        <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat2[0].Id)">
-                                            <div class="col-md-3 col-md-offset-1 portfolio-item">
-                                                <div class="portfolio-one">
-                                                    <div class="portfolio-head">
-                                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                                        <div class="portfolio-hover">
+                                                            </div><!-- End portfolio-meta -->
+                                                        </div><!-- End portfolio-content -->
+                                                    </div><!-- End portfolio-item -->
+                                                </div>
+                                            </a>
+                                            <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat2[0].Id)">
+                                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                                    <div class="portfolio-one">
+                                                        <div class="portfolio-head">
+                                                            <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
+                                                            <div class="portfolio-hover">
 
-                                                        </div>
-                                                    </div><!-- End portfolio-head -->
-                                                    <div class="portfolio-content">
-                                                        <i class="fa fa-leaf"></i>
-                                                        <div class="portfolio-meta">
-                                                            <div class="portfolio-name"><h6>@ViewBag.pechat2[0].Name</h6></div>
+                                                            </div>
+                                                        </div><!-- End portfolio-head -->
+                                                        <div class="portfolio-content">
+                                                            <i class="fa fa-leaf"></i>
+                                                            <div class="portfolio-meta">
+                                                                <div class="portfolio-name"><h6>@ViewBag.pechat2[0].Name</h6></div>
 
-                                                        </div><!-- End portfolio-meta -->
-                                                    </div><!-- End portfolio-content -->
-                                                </div><!-- End portfolio-item -->
-                                            </div>
-                                        </a>
-                                        <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat3[0].Id)">
-                                            <div class="col-md-3 col-md-offset-1 portfolio-item">
-                                                <div class="portfolio-one">
-                                                    <div class="portfolio-head">
-                                                        <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
-                                                        <div class="portfolio-hover">
+                                                            </div><!-- End portfolio-meta -->
+                                                        </div><!-- End portfolio-content -->
+                                                    </div><!-- End portfolio-item -->
+                                                </div>
+                                            </a>
+                                            <a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat3[0].Id)">
+                                                <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                                    <div class="portfolio-one">
+                                                        <div class="portfolio-head">
+                                                            <div class="portfolio-img"><img alt="" src="images/portfolio-1.png"></div>
+                                                            <div class="portfolio-hover">
 
-                                                        </div>
-                                                    </div><!-- End portfolio-head -->
-                                                    <div class="portfolio-content">
-                                                        <i class="fa fa-leaf"></i>
-                                                        <div class="portfolio-meta">
-                                                            <div class="portfolio-name"><h6>@ViewBag.pechat3[0].Name</h6></div>
+                                                            </div>
+                                                        </div><!-- End portfolio-head -->
+                                                        <div class="portfolio-content">
+                                                            <i class="fa fa-leaf"></i>
+                                                            <div class="portfolio-meta">
+                                                                <div class="portfolio-name"><h6>@ViewBag.pechat3[0].Name</h6></div>
 
-                                                        </div><!-- End portfolio-meta -->
-                                                    </div><!-- End portfolio-content -->
-                                                </div><!-- End portfolio-item -->
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div><!-- End portfolio-slide -->
-                        </div><!-- End animation -->
-
-                    </div><!-- End row -->
+                                                            </div><!-- End portfolio-meta -->
+                                                        </div><!-- End portfolio-content -->
+                                                    </div><!-- End portfolio-item -->
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!-- End portfolio-slide -->
+                            </div><!-- End animation -->
+                        </div>
+                        </div><!-- End row -->
                     <div class="animation" data-animate="bounceInRight">
 
                     </div><!-- End animation -->
                 </div><!-- End container -->
             </div><!-- End sections -->
         </div>
-       
+        <div class="col-md-2 col-xs-12 col-sm-12 news-block">
+            <div class="row" style="margin:0">
+                <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">
+                    <div class="col-md-12 col-xs-4 col-sm-4 news">
+                        <img class="pad col-md-6" src="@ViewBag.News[0].Picture" alt="@ViewBag.News[0].Name" />
+                        <p class="col-md-2">@ViewBag.News[0].Name</p>
+                    </div>
+                </a>
+                <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">
+                    <div class="col-md-12 col-xs-4 col-sm-4 news">
+                        <img class="pad col-md-6" src="@ViewBag.News[1].Picture" alt="@ViewBag.News[1].Name" />
+                        <p class="col-md-2">@ViewBag.News[1].Name</p>
+                    </div>
+                </a>
+                <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">
+                    <div class="col-md-12 col-xs-4 col-sm-4 news">
+                        <img class="pad col-md-6" src="@ViewBag.News[1].Picture" alt="@ViewBag.News[1].Name" />
+                        <p class="col-md-2">@ViewBag.News[1].Name</p>
+                    </div>
+                </a>
+            </div>
+            <div class="view"><a href="@Url.Content("~/Home/NewsAll/")">Читать все</a></div>
+        </div>
     </div>
+</div>
 </div>
 <div class="sections" id="fotoknig">
     <div class="container">

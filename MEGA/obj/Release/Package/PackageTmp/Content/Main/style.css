@@ -2666,7 +2666,9 @@ blockquote {
     }
 }
 .news{
-    box-shadow: 0px 0px 25px #c3c3c3;
+    border-bottom: 1px solid #e60000;
+    margin-bottom: 20px;
+    transition: 400ms;
 }
 
 .view{
@@ -2686,6 +2688,13 @@ blockquote {
     color: #fff;
     margin-top: 10px;
     margin-bottom:10px;
+}
+.news:hover{
+   box-shadow: #e60000 0px 0px 8px;
+}
+
+.pad{
+    margin-bottom:15px;
 }
 
 #registerForm{
@@ -2723,3 +2732,16 @@ blockquote {
     left: 2px;
 }
 
+
+@media(min-width:){
+    
+}
+.news-block{
+    position: absolute;
+    z-index: 9999;
+    left: 83%;
+}
+
+.sll{
+    
+}

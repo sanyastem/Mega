@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DB.GoodsType>
 
 @{
-    ViewBag.Title = "ProductsCreate";
+    ViewBag.Title = "Добавление товара";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -17,7 +17,7 @@
             @Html.AntiForgeryToken()
 
 
-
+            <p>Тип товара</p>
             <select name="GoodsTypeId">
 
 
@@ -27,9 +27,13 @@
 
                 }
             </select>
+            <p>Название товара</p>
             <input type="text" name="Name"/>
+            <p>Описание товара</p>
             <textarea name="Information"></textarea>
+            <p>Фото товара</p>
             <input type="file" name="uploadImage" />
+            <p>Цена товара</p>
             <input type="text" name="Price" />
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

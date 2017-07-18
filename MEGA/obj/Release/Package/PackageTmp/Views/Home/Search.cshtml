@@ -17,27 +17,35 @@
                 <div class="portfolio-slide">
                     <ul>
                         <li>
-                            @foreach (var item in Model)
+                            @if (ViewBag.Counts == 0)
                             {
-                                <a href="@Url.Content("~/Home/Ditails/"+item.Id)">
-                                    <div class="col-md-3 col-md-offset-1 portfolio-item">
-                                        <div class="portfolio-one">
-                                            <div class="portfolio-head">
-                                                <div class="portfolio-img"><img alt="" src="@item.Picture"></div>
-                                                <div class="portfolio-hover">
-                                                </div>
-                                            </div><!-- End portfolio-head -->
-                                            <div class="portfolio-content">
-                                                <i class="fa fa-leaf"></i>
-                                                <div class="portfolio-meta">
-                                                    <div class="portfolio-name"><h6>@item.Name</h6></div>
-
-                                                </div><!-- End portfolio-meta -->
-                                            </div><!-- End portfolio-content -->
-                                        </div><!-- End portfolio-item -->
-                                    </div>
-                                </a>
+                                <h4>По Вашему запросу ничего не найдено.</h4>
                             }
+                            else
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <a href="@Url.Content("~/Home/Ditails/"+item.Id)">
+                                        <div class="col-md-3 col-md-offset-1 portfolio-item">
+                                            <div class="portfolio-one">
+                                                <div class="portfolio-head">
+                                                    <div class="portfolio-img"><img alt="" src="@item.Picture"></div>
+                                                    <div class="portfolio-hover">
+                                                    </div>
+                                                </div><!-- End portfolio-head -->
+                                                <div class="portfolio-content">
+                                                    <i class="fa fa-leaf"></i>
+                                                    <div class="portfolio-meta">
+                                                        <div class="portfolio-name"><h6>@item.Name</h6></div>
+
+                                                    </div><!-- End portfolio-meta -->
+                                                </div><!-- End portfolio-content -->
+                                            </div><!-- End portfolio-item -->
+                                        </div>
+                                    </a>
+                                }
+                            }
+                            
                         </li>
                     </ul>
                 </div><!-- End portfolio-slide -->

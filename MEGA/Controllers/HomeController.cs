@@ -16,18 +16,7 @@ namespace MEGA.Controllers
     {
         public HomeController()
         {
-            using (var context = new ApplicationDbContext())
-            {
 
-                    if (context.Orders.Count() != 0)
-                    {
-                        ViewBag.col = context.Orders.Count();
-                    }
-                    else
-                    {
-                        ViewBag.col = 0;
-                    }
-            }
             
         }
         public ActionResult Index()

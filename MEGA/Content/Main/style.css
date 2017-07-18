@@ -1094,6 +1094,7 @@ input,textarea {
 }
 .portfolio-content {
 	padding: 20px;
+    height: 110px;
 }
 .portfolio-content > i {
 	float: left;
@@ -2740,11 +2741,37 @@ blockquote {
     position: absolute;
     z-index: 9999;
     left: 83%;
+    top: 732px;
 }
 
 .sll{
     
 }
-@media screen and (max-width: 990px) {
+@media(max-width: 990px) {
+    .news-block{
+        position:static;
 
+    }
+}
+
+.section-2 .sections-title p{
+    max-width: 800px;
+    margin: auto;
+}
+
+.news p{
+    padding:0;
+}
+
+.portfolio-item{
+    min-height: 305px;
+}
+
+.portfolio-img{
+    height:170px;
+}
+
+.news-text{
+    text-align:center;
+    color: #e60000;
 }

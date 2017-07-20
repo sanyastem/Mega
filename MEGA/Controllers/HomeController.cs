@@ -158,6 +158,10 @@ namespace MEGA.Controllers
         {
             return View();
         }
+        public ActionResult Constructor()
+        {
+            return View();
+        }
 
     }
 }

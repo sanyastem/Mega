@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(local)\SQLEXPRESS;Initial Catalog=MEGA;integrated security=True;" tags="SqlConnectionString">
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="Data Source=(local);Initial Catalog=MEGA;integrated security=True;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="D:\\GitHub\\mega\\MEGA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
   <parameter name="MEGA.Models.ApplicationDbContext-Web.config Connection String" description="MEGA.Models.ApplicationDbContext Строка подключения в web.config, используемая приложением для доступа к базе данных." defaultValue="MEGA.Models.ApplicationDbContext_ConnectionString" tags="SqlConnectionString">

@@ -64,7 +64,7 @@
         $("select").change(function () {
             if ($(this).val() == 0) return false;
 
-            window.open("../../admin/ProductAll/" + $(this).val(), "_self");
+            window.open("@Url.Content("~/admin/ProductAll/")" + $(this).val(), "_self");
         });
     </script>
 </section>

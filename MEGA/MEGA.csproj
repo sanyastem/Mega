@@ -671,6 +671,7 @@
     <Content Include="Views\Home\NewsAll.cshtml" />
     <Content Include="Views\Home\BasketAll.cshtml" />
     <Content Include="Views\Home\Constructor.cshtml" />
+    <Content Include="Views\Home\AllDeteilsSuvenir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

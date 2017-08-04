@@ -75,6 +75,7 @@ namespace MEGA.Controllers
         }
         public ActionResult AllDeteilsSuvenir(int id)
         {
+            ViewBag.idType = id;
             using (var context = new ApplicationDbContext())
             {
                 return View(context.Products.Where(x => x.GoodsTypeId == id).ToList());
@@ -166,9 +167,9 @@ namespace MEGA.Controllers
         {
             return View();
         }
-        public ActionResult Constructor()
+        public ActionResult Constructor(int id)
         {
-            return View();
+            return View(id);
         }
 
     }

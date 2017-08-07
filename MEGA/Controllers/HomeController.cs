@@ -171,6 +171,24 @@ namespace MEGA.Controllers
         {
             return View(id);
         }
+        public ActionResult NewBuy(NewOrder nw, HttpPostedFileBase uploadImage)
+        {
+            if (uploadImage != null)
+            {
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                // сохраняем файл в папку Files в проекте
+                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                nw.Picture = "../../Files/" + fileName;
+            }
+
+            using (var context = new ApplicationDbContext())
+            {
+                context.NewOrders.Add(nw);
+                context.SaveChanges();
+            }
+            return RedirectToAction("BasketAll");
+        }
 
     }
 }

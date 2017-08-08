@@ -189,6 +189,9 @@
                 </div>
                 break;
             case "13":
+                <div class="fpd-product" title="Shirt Front" data-thumbnail="">
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/вымпел.png")" title="Base" data-parameters='{"x": 540, "y": 240, "colors": "#000000", "removable": true, "draggable": true,"price": 10}' />
+                </div>
                 break;
             case "14":
                 break;
@@ -198,11 +201,19 @@
                 </div>
                 break;
             case "16":
+                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/сумка.png")">
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/сумка.png")" title="Base" data-parameters='{"zChangeable": true, "x": 515, "y": 300, "colors": "#000000", "removable": true, "price": 10, "boundingBox": "Base"}' />
+                </div>
                 break;
             case "17":
+                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/брелок.png")">
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/брелок.png")" title="Base" data-parameters='{"zChangeable": true, "x": 515, "y": 300, "colors": "#000000", "removable": true, "price": 10, "boundingBox": "Base"}' />
+                </div>
                 break;
             case "18":
-
+                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/магнит.png")">
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/магнит.png")" title="Base" data-parameters='{"x": 500, "y": 250, "colors": "#000","price": 10}' />
+                </div>
                 break;
             case "19":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/пазлы-2.png")">
@@ -214,12 +225,17 @@
             case "21":
                 break;
             case "22":
-                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/коврик-2.png")">
-                    <img src="@Url.Content("~/Content/Constructor/images/picture/коврик-2.png")" title="Base" data-parameters='{"x": 240, "y": 235, "colors": "#fff", "price": 20}' />
+                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/коврик для мыши.png")">
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/коврик для мыши.png")" title="Base" data-parameters='{"x": 340, "y": 235, "colors": "#fff", "price": 20}' />
                 </div>
-                    break;
+                break;
+            case "23":
+                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/холст.png")">
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/холст.png")" title="Base" data-parameters='{"x": 340, "y": 235, "colors": "#fff", "price": 20}' />
+                </div>
+                break;
 
-                    }
+        }
 
 
                     <!--div class="fpd-product" title="Scoop Tee" data-thumbnail="@Url.Content("~/Content/Constructor/images/scoop_tee/preview.png")">
@@ -270,18 +286,13 @@
             <a href="#" id="pdf-button" class="btn btn-primary">Создать PDF</a>
         </div>
         <div class="col-md-2">
-            <a href="#" id="upload-button" class="btn btn-warning">Закать</a>
+            <a href="#" id="" class="btn btn-warning">Закать</a>
         </div>
         <div class="col-md-3">
             <span class="price badge badge-inverse"><span id="thsirt-price"></span> бел.руб.</span>
         </div>
     </div>
 
-    <!-- The form recreation -->
-    <input type="file" id="design-upload" style="display: none;" />
-    <form action="php/recreation.php" id="recreation-form" method="post">
-        <input type="hidden" name="recreation_product" value="" />
-    </form>
 </div>
 
 

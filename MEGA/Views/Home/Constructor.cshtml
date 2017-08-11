@@ -57,7 +57,9 @@
 			    var image = yourDesigner.createImage();
 				return false;
 			});
-
+			$('#sm').click(function () {
+			    $('#fls').val(yourDesigner.createImage());
+			});
 			//create a pdf with jsPDF
 			$('#pdf-button').click(function(){
 				var image = new Image();
@@ -294,14 +296,15 @@
             <a href="#" id="image-button" class="btn btn-primary">Создать картинку</a>
             <a href="#" id="pdf-button" class="btn btn-primary">Создать PDF</a>
         </div>
-        <div class="col-md-2">
-            <a href="" id="" class="btn btn-warning">Закать</a>
-        </div>
+
         <div class="col-md-3">
             <span class="price badge badge-inverse"><span id="thsirt-price"></span> бел.руб.</span>
         </div>
+        <div class="col-md-2">
+           <a href="#" class="btn btn-primary" style="font-size: 20px;font-weight: bold;">Продолжить   &#8594;</a>
+        </div>
     </div>
-
+        
 </div>
 
 

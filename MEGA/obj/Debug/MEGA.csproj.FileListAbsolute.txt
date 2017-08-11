@@ -457,3 +457,4 @@ F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.dll
 F:\GitHub\Mega\MEGA\bin\PagedList.xml
 F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.xml
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
+D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.Addopis.resources

@@ -32,7 +32,7 @@ namespace MEGA.Controllers
                 ViewBag.pechat3 = context.GoodsTypes.Where(x=>x.Id == 3).ToList();
                 ViewBag.one3 = context.Products.Where(x => x.GoodsTypeId == 4).ToList();
                 ViewBag.one4 = context.Products.Where(x => x.GoodsTypeId == 5).ToList();
-                ViewBag.suvenir = context.GoodsTypes.ToList();
+                ViewBag.suvenir = context.GoodsTypes.Where(x=>x.Id != 20).ToList();
                 ViewBag.News = context.Newss.OrderByDescending(x => x.Id).ToList();
                 return View();
             }
@@ -186,6 +186,17 @@ namespace MEGA.Controllers
             {
                 context.NewOrders.Add(nw);
                 context.SaveChanges();
+            }
+            return RedirectToAction("BasketAll");
+        }
+        public ActionResult infoProduct(HttpPostedFileBase uploadImage)
+        {
+            if (uploadImage != null)
+            {
+                // получаем имя файла
+                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                // сохраняем файл в папку Files в проекте
+                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
             }
             return RedirectToAction("BasketAll");
         }

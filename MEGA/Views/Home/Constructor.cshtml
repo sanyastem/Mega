@@ -21,6 +21,17 @@
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Constructor/css/jquery.fancyProductDesigner-fonts.css")" />
     <!-- Include js files -->
     <!-- HTML5 canvas library - required -->
+    <style> 
+        .showImages{
+            display:block !important;
+        }
+        .heighCon{
+            display:none;
+        }
+        .btnNone{
+            display:none;
+        }
+    </style>
 <script src="@Url.Content("~/Content/Constructor/js/jquery.fancyProductDesigner.min.js")"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
@@ -58,7 +69,20 @@
 				return false;
 			});
 			$('#sm').click(function () {
-			    $('#fls').val(yourDesigner.createImage());
+
+			    $('#fls').attr("src", yourDesigner.getProductDataURL('jpeg', '#ffffff'));
+			    $('#fls').toggleClass('showImages');
+			    $('#clothing-designer').toggleClass('heighCon');
+			    $('#print-button').toggleClass('heighCon');
+			    $('#image-button').toggleClass('heighCon');
+			    $('#pdf-button').toggleClass('heighCon');
+			    if ($('#sm').text() == "←   Назад") {
+
+			        $('#sm').text("Продолжить   →");
+			    }
+			    else {
+			        $('#sm').text("←   Назад");
+			    }
 			});
 			//create a pdf with jsPDF
 			$('#pdf-button').click(function(){
@@ -225,11 +249,6 @@
                     <img src="@Url.Content("~/Content/Constructor/images/picture/пазлы-2.png")" title="Base" data-parameters='{"x": 500, "y": 250, "colors": "#000","price": 10}' />
                 </div>
                 break;
-            case "20":
-                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/прям.png")">
-                    <img src="@Url.Content("~/Content/Constructor/images/picture/прям.png")" title="Base" data-parameters='{"x": 340, "y": 235, "colors": "#000", "price": 20}' />
-                </div>
-                break;
             case "21":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/прям.png")">
                     <img src="@Url.Content("~/Content/Constructor/images/picture/прям.png")" title="Base" data-parameters='{"x": 340, "y": 235, "colors": "#000", "price": 20}' />
@@ -301,8 +320,9 @@
             <span class="price badge badge-inverse"><span id="thsirt-price"></span> бел.руб.</span>
         </div>
         <div class="col-md-2">
-           <a href="#" class="btn btn-primary" style="font-size: 20px;font-weight: bold;">Продолжить   &#8594;</a>
+           <a href="#" id="sm" class="btn btn-primary" style="font-size: 20px;font-weight: bold;">Продолжить   &#8594;</a>
         </div>
+        <img src="#" id="fls" alt="Alternate Text" style="display:none;"/>
     </div>
         
 </div>

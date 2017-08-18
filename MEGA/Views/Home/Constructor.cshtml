@@ -37,6 +37,12 @@
         .infoConShow{
             display:inline;
         }
+        .inputSub{
+            display:none;
+        }
+        .showInput{
+            display:block;
+        }
     </style>
 <script src="@Url.Content("~/Content/Constructor/js/jquery.fancyProductDesigner.min.js")"></script>
     <script type="text/javascript">
@@ -75,8 +81,9 @@
 				return false;
 			});
 			$('#sm').click(function () {
-
+			    $('.inputSub').toggleClass('showInput');
 			    $('#fls').attr("src", yourDesigner.getProductDataURL('jpeg', '#ffffff'));
+			    $('#fileInp').attr("value", yourDesigner.getProductDataURL('jpeg', '#ffffff'));
 			    $('#fls').toggleClass('showImages');
 			    $('#clothing-designer').toggleClass('heighCon');
 			    $('#print-button').toggleClass('heighCon');
@@ -331,12 +338,13 @@
         </div>
         <div class="col-md-12">
             
-@using (Html.BeginForm("ProductsCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("infoProduct", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-            <img src="#" id="fls" alt="Alternate Text" style="display:none;" class="col-md-12"/>
-            @switch (Model.ToString())
+            <img src="#" id="fls" alt="Alternate Text" style="display:none;" class="col-md-12" />
+            <input type="file" style="visibility:hidden;" id="fileInp" name="uploadImage"/>
+            switch (Model.ToString())
             {
                 case "6":
                     <select class="infoCon">
@@ -439,7 +447,7 @@
                     break;
 
             }
-    <input type="submit" value="Заказать"/>
+    <input type="submit" value="Заказать" class="inputSub"/>
 }
         </div>
 

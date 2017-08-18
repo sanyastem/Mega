@@ -31,6 +31,12 @@
         .btnNone{
             display:none;
         }
+        .infoCon {
+            display:none;
+        }
+        .infoConShow{
+            display:inline;
+        }
     </style>
 <script src="@Url.Content("~/Content/Constructor/js/jquery.fancyProductDesigner.min.js")"></script>
     <script type="text/javascript">
@@ -76,6 +82,7 @@
 			    $('#print-button').toggleClass('heighCon');
 			    $('#image-button').toggleClass('heighCon');
 			    $('#pdf-button').toggleClass('heighCon');
+			    $('.infoCon').toggleClass('infoConShow');
 			    if ($('#sm').text() == "←   Назад") {
 
 			        $('#sm').text("Продолжить   →");
@@ -322,79 +329,120 @@
         <div class="col-md-2">
            <a href="#" id="sm" class="btn btn-primary" style="font-size: 20px;font-weight: bold;">Продолжить   &#8594;</a>
         </div>
-        <img src="#" id="fls" alt="Alternate Text" style="display:none;"/>
-        @switch (Model.ToString())
-        {
-            case "6":
-                <select>
-                   @for (int i = 38; i < 54; i++)
-                   {
-                    <option>@i</option>
-                   }
-                </select>
-                <select>
-                    <option>Мужская</option>
-                    <option>Женская</option>
-                </select>
-                break;
-            case "7":
+        <div class="col-md-12">
+            
+@using (Html.BeginForm("ProductsCreate", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+            <img src="#" id="fls" alt="Alternate Text" style="display:none;" class="col-md-12"/>
+            @switch (Model.ToString())
+            {
+                case "6":
+                    <select class="infoCon">
+                        @for (int i = 38; i < 54; i++)
+                        {
+                            <option>@i</option>
+                        }
+                    </select>
+                    <select class="infoCon">
+                        <option>Мужская</option>
+                        <option>Женская</option>
+                    </select>
+                    break;
+                case "7":
                 <!---->
-                break;
-            case "8":
-                <p>Диаметр 21</p>
-                break;
-            case "9":
+                    break;
+                case "8":
+                    <p class="infoCon">Диаметр 21</p>
+                    break;
+                case "9":
                 <!---->
-                break;
-            case "10":
+                    break;
+                case "10":
                 <!---->
-                break;
-            case "11":
-                <p>12x18</p>
-                break;
-            case "12":
-                <p>35x35</p>
-                break;
-            case "13":
+                    break;
+                case "11":
+                    <p class="infoCon">12x18</p>
+                    break;
+                case "12":
+                    <p class="infoCon">35x35</p>
+                    break;
+                case "13":
                 <!--вопрос-->
-                break;
-            case "14":<!--диаметр-->
-                <select>
-                    <option>18</option>
-                    <option>30</option>
-                </select>
-                break;
-            case "15":
-                <select>
-                    <option>IPhone 5</option>
-                    <option>IPhone 5s</option>
-                    <option>IPhone 6</option>
-                    <option>IPhone 6s</option>
-                </select>
-                break;
-            case "16":
-                <p>315x260</p>
-                break;
-            case "17":
+                    break;
+                case "14":<!--диаметр-->
+                    <select class="infoCon">
+                        <option>18</option>
+                        <option>30</option>
+                    </select>
+                    break;
+                case "15":
+                    <select class="infoCon">
+                        <option>IPhone 5</option>
+                        <option>IPhone 5s</option>
+                        <option>IPhone 6</option>
+                        <option>IPhone 6s</option>
+                    </select>
+                    break;
+                case "16":
+                    <p class="infoCon">315x260</p>
+                    break;
+                case "17":
+                    <select class="infoCon">
+                        <option>Металлический</option>
+                        <option>Акриловый</option>
+                    </select>
+                    <select style="display:none;">
+                        <option>Круглые</option>
+                        <option>Овальные</option>
+                        <option>Квадратные</option>
+                    </select>
+                    <select style="display:none;">
+                        <option>Квадрат 39x39</option>
+                        <option>Прямоугольник 39x48</option>
+                    </select>
+                    break;
+                case "18":
+                    <select class="infoCon">
+                        <option>65x65</option>
+                        <option>57x77</option>
+                        <option>85x63</option>
+                        <option>Овал</option>
+                        <option>Круг-4.1 диаметр</option>
+                    </select>
+                    break;
+                case "19":
+                    <select class="infoCon">
+                        <option>A - 4(12 элементов,20х25)</option>
+                        <option>А - 3(252 элементов,26х35)</option>
+                        <option>А - 4(120 элементов,20х29)</option>
+                        <option>А - 5(63 элемента,13х18)</option>
+                    </select>
+                    break;
+                case "21":
+                <!---->
+                    break;
+                case "22":
+                    <p class="infoCon">18х22</p>
+                    break;
+                case "23":
+                    <select class="infoCon">
+                        @for (int i = 20; i <= 100; i++)
+                        {
+                            for (int j = 20; j <= 200; j++)
+                            {
+                                <option>@i x @j</option>
+                            }
+                        }
+                    </select>
+                    break;
 
-                break;
-            case "18":
+            }
+    <input type="submit" value="Заказать"/>
+}
+        </div>
 
-                break;
-            case "19":
-
-                break;
-            case "21":
-
-                break;
-            case "22":
-
-                break;
-            case "23":
-
-                break;
-
-        }
     </div>
         
 </div>

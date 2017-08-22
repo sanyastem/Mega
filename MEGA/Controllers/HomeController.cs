@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Drawing;
 
 namespace MEGA.Controllers
 {
@@ -193,10 +194,14 @@ namespace MEGA.Controllers
         {
             if (uploadImage != null)
             {
-                // получаем имя файла
-                string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
-                // сохраняем файл в папку Files в проекте
-                uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                if (uploadImage != null)
+                {
+                    // получаем имя файла
+                    string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
+                    // сохраняем файл в папку Files в проекте
+                    uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
+                    
+                }
             }
             return RedirectToAction("BasketAll");
         }

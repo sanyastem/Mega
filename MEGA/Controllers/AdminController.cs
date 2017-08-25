@@ -343,5 +343,26 @@ namespace MEGA.Controllers
             }
             
         }
+        public ActionResult OrderAccept(int?[] mas)
+        {
+            if (mas== null)
+            {
+                ViewBag.Message = "Заказ не выбран!";
+                return Redirect("~/Admin/OrderAll");
+            }
+            else
+            {
+                foreach (var item in mas)
+                {
+                    using (var context = new ApplicationDbContext())
+                    {
+                       var order = context.Orders.Find(item);
+                        order.Status = true;
+                    }
+                }
+                return Redirect("~/Admin/OrderAll");
+            }
+            
+        }
     }
 }

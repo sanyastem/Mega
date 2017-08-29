@@ -31,10 +31,10 @@
         .btnNone{
             display:none;
         }
-        .infoCon {
+        .infoCon col-md-5 selectpicker {
             display:none;
         }
-        .infoConShow{
+        .infoCon col-md-5 selectpickerShow{
             display:inline;
         }
         .inputSub{
@@ -89,7 +89,7 @@
 			    $('#print-button').toggleClass('heighCon');
 			    $('#image-button').toggleClass('heighCon');
 			    $('#pdf-button').toggleClass('heighCon');
-			    $('.infoCon').toggleClass('infoConShow');
+			    $('.infoCon col-md-5 selectpicker').toggleClass('infoCon col-md-5 selectpickerShow');
 			    if ($('#sm').text() == "←   Назад") {
 
 			        $('#sm').text("Продолжить   →");
@@ -209,6 +209,8 @@
             case "8":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/тарелка.png")">
                     <img src="@Url.Content("~/Content/Constructor/images/picture/тарелка.png")" title="Base" data-parameters='{"zChangeable": true, "x": 315, "y": 300, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 10, "boundingBox": "Base", "autoCenter": true}' />
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/тарелка-края.png")" title="Shadow" data-parameters='{ "x": 315, "y": 300}' />
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/тарелка-внутри.png")" title="Hightlights" data-parameters='{"zChangeable": true, "x": 315, "y": 300, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 10, "boundingBox": "Base", "autoCenter": true}' />
                 </div>
                 break;
             case "9":
@@ -237,6 +239,7 @@
                 </div>
                 break;
             case "14":
+
                 break;
             case "15":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/iphone.png")">
@@ -347,13 +350,13 @@
             switch (Model.ToString())
             {
                 case "6":
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         @for (int i = 38; i < 54; i++)
                         {
                             <option>@i</option>
                         }
                     </select>
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         <option>Мужская</option>
                         <option>Женская</option>
                     </select>
@@ -362,7 +365,7 @@
                 <!---->
                     break;
                 case "8":
-                    <p class="infoCon">Диаметр 21</p>
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">Диаметр 21</p>
                     break;
                 case "9":
                 <!---->
@@ -371,22 +374,22 @@
                 <!---->
                     break;
                 case "11":
-                    <p class="infoCon">12x18</p>
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">12x18</p>
                     break;
                 case "12":
-                    <p class="infoCon">35x35</p>
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">35x35</p>
                     break;
                 case "13":
                 <!--вопрос-->
                     break;
                 case "14":<!--диаметр-->
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         <option>18</option>
                         <option>30</option>
                     </select>
                     break;
                 case "15":
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         <option>IPhone 5</option>
                         <option>IPhone 5s</option>
                         <option>IPhone 6</option>
@@ -394,10 +397,10 @@
                     </select>
                     break;
                 case "16":
-                    <p class="infoCon">315x260</p>
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">315x260</p>
                     break;
                 case "17":
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         <option>Металлический</option>
                         <option>Акриловый</option>
                     </select>
@@ -412,7 +415,7 @@
                     </select>
                     break;
                 case "18":
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         <option>65x65</option>
                         <option>57x77</option>
                         <option>85x63</option>
@@ -421,7 +424,7 @@
                     </select>
                     break;
                 case "19":
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         <option>A - 4(12 элементов,20х25)</option>
                         <option>А - 3(252 элементов,26х35)</option>
                         <option>А - 4(120 элементов,20х29)</option>
@@ -432,10 +435,10 @@
                 <!---->
                     break;
                 case "22":
-                    <p class="infoCon">18х22</p>
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">18х22</p>
                     break;
                 case "23":
-                    <select class="infoCon">
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
                         @for (int i = 20; i <= 100; i++)
                         {
                             for (int j = 20; j <= 200; j++)
@@ -447,7 +450,7 @@
                     break;
 
             }
-    <input type="submit" value="Заказать" class="inputSub"/>
+    <input type="submit" value="Заказать" class="inputSub btn btn-warning col-md-2 col-md-offset-4"/>
 }
         </div>
 

@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<DB.Order>
-
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Заказы";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -73,7 +73,7 @@
                         @Html.DisplayFor(modelItem => item.DateOrder)
                     </td>
                     <td>
-                        @Html.ActionLink("Details", "Details", new { id = item.Id })
+                        @Html.ActionLink("Подробнее", "Details", new { id = item.Id })
                     </td>
                 </tr>
             }

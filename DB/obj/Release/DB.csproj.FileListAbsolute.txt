@@ -3,3 +3,8 @@ D:\GitHub\mega\DB\bin\Release\DB.pdb
 D:\GitHub\mega\DB\obj\Release\DB.dll
 D:\GitHub\mega\DB\obj\Release\DB.pdb
 D:\GitHub\mega\DB\obj\Release\DB.csprojResolveAssemblyReference.cache
+F:\GitHub\Mega\DB\bin\Release\DB.dll
+F:\GitHub\Mega\DB\bin\Release\DB.pdb
+F:\GitHub\Mega\DB\obj\Release\DB.csprojResolveAssemblyReference.cache
+F:\GitHub\Mega\DB\obj\Release\DB.dll
+F:\GitHub\Mega\DB\obj\Release\DB.pdb

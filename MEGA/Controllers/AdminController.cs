@@ -76,7 +76,7 @@ namespace MEGA.Controllers
                 string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
                 // сохраняем файл в папку Files в проекте
                 uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
-                pro.Picture = "../../Files/" + fileName;
+                pro.Picture = "~/Files/" + fileName;
             }
             
                 using (var context = new ApplicationDbContext())
@@ -135,7 +135,7 @@ namespace MEGA.Controllers
                 string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
                 // сохраняем файл в папку Files в проекте
                 uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
-                product.Picture = "../../Files/" + fileName;
+                product.Picture = "~/Files/" + fileName;
             }
             using (var context = new ApplicationDbContext())
             {
@@ -187,7 +187,7 @@ namespace MEGA.Controllers
                 string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
                 // сохраняем файл в папку Files в проекте
                 uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
-                news.Picture = "../../Files/" + fileName;
+                news.Picture = "~/Files/" + fileName;
             }
             using (var context = new ApplicationDbContext())
             {
@@ -234,7 +234,7 @@ namespace MEGA.Controllers
                 string fileName = System.IO.Path.GetFileName(uploadImage.FileName);
                 // сохраняем файл в папку Files в проекте
                 uploadImage.SaveAs(Server.MapPath("~/Files/" + fileName));
-                news.Picture = "../../Files/" + fileName;
+                news.Picture = "~/Files/" + fileName;
             }
             using (var context = new ApplicationDbContext())
             {

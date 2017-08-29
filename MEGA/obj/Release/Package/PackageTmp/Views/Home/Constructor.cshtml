@@ -21,6 +21,29 @@
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Constructor/css/jquery.fancyProductDesigner-fonts.css")" />
     <!-- Include js files -->
     <!-- HTML5 canvas library - required -->
+    <style> 
+        .showImages{
+            display:block !important;
+        }
+        .heighCon{
+            display:none;
+        }
+        .btnNone{
+            display:none;
+        }
+        .infoCon col-md-5 selectpicker {
+            display:none;
+        }
+        .infoCon col-md-5 selectpickerShow{
+            display:inline;
+        }
+        .inputSub{
+            display:none;
+        }
+        .showInput{
+            display:block;
+        }
+    </style>
 <script src="@Url.Content("~/Content/Constructor/js/jquery.fancyProductDesigner.min.js")"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
@@ -58,7 +81,22 @@
 				return false;
 			});
 			$('#sm').click(function () {
-			    $('#fls').val(yourDesigner.createImage());
+			    $('.inputSub').toggleClass('showInput');
+			    $('#fls').attr("src", yourDesigner.getProductDataURL('jpeg', '#ffffff'));
+			    $('#fileInp').attr("value", yourDesigner.getProductDataURL('jpeg', '#ffffff'));
+			    $('#fls').toggleClass('showImages');
+			    $('#clothing-designer').toggleClass('heighCon');
+			    $('#print-button').toggleClass('heighCon');
+			    $('#image-button').toggleClass('heighCon');
+			    $('#pdf-button').toggleClass('heighCon');
+			    $('.infoCon col-md-5 selectpicker').toggleClass('infoCon col-md-5 selectpickerShow');
+			    if ($('#sm').text() == "←   Назад") {
+
+			        $('#sm').text("Продолжить   →");
+			    }
+			    else {
+			        $('#sm').text("←   Назад");
+			    }
 			});
 			//create a pdf with jsPDF
 			$('#pdf-button').click(function(){
@@ -171,6 +209,8 @@
             case "8":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/тарелка.png")">
                     <img src="@Url.Content("~/Content/Constructor/images/picture/тарелка.png")" title="Base" data-parameters='{"zChangeable": true, "x": 315, "y": 300, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 10, "boundingBox": "Base", "autoCenter": true}' />
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/тарелка-края.png")" title="Shadow" data-parameters='{ "x": 315, "y": 300}' />
+                    <img src="@Url.Content("~/Content/Constructor/images/picture/тарелка-внутри.png")" title="Hightlights" data-parameters='{"zChangeable": true, "x": 315, "y": 300, "colors": "#000000", "removable": true, "draggable": true, "rotatable": true, "resizable": true, "price": 10, "boundingBox": "Base", "autoCenter": true}' />
                 </div>
                 break;
             case "9":
@@ -199,6 +239,7 @@
                 </div>
                 break;
             case "14":
+
                 break;
             case "15":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/iphone.png")">
@@ -223,11 +264,6 @@
             case "19":
                 <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/пазлы-2.png")">
                     <img src="@Url.Content("~/Content/Constructor/images/picture/пазлы-2.png")" title="Base" data-parameters='{"x": 500, "y": 250, "colors": "#000","price": 10}' />
-                </div>
-                break;
-            case "20":
-                <div class="fpd-product" title="Shirt Front" data-thumbnail="@Url.Content("~/Content/Constructor/images/picture/прям.png")">
-                    <img src="@Url.Content("~/Content/Constructor/images/picture/прям.png")" title="Base" data-parameters='{"x": 340, "y": 235, "colors": "#000", "price": 20}' />
                 </div>
                 break;
             case "21":
@@ -301,8 +337,123 @@
             <span class="price badge badge-inverse"><span id="thsirt-price"></span> бел.руб.</span>
         </div>
         <div class="col-md-2">
-           <a href="#" class="btn btn-primary" style="font-size: 20px;font-weight: bold;">Продолжить   &#8594;</a>
+           <a href="#" id="sm" class="btn btn-primary" style="font-size: 20px;font-weight: bold;">Продолжить   &#8594;</a>
         </div>
+        <div class="col-md-12">
+            
+@using (Html.BeginForm("infoProduct", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+            <img src="#" id="fls" alt="Alternate Text" style="display:none;" class="col-md-12" />
+            <input type="file" style="visibility:hidden;" id="fileInp" name="uploadImage">
+            switch (Model.ToString())
+            {
+                case "6":
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        @for (int i = 38; i < 54; i++)
+                        {
+                            <option>@i</option>
+                        }
+                    </select>
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        <option>Мужская</option>
+                        <option>Женская</option>
+                    </select>
+                    break;
+                case "7":
+                <!---->
+                    break;
+                case "8":
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">Диаметр 21</p>
+                    break;
+                case "9":
+                <!---->
+                    break;
+                case "10":
+                <!---->
+                    break;
+                case "11":
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">12x18</p>
+                    break;
+                case "12":
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">35x35</p>
+                    break;
+                case "13":
+                <!--вопрос-->
+                    break;
+                case "14":<!--диаметр-->
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        <option>18</option>
+                        <option>30</option>
+                    </select>
+                    break;
+                case "15":
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        <option>IPhone 5</option>
+                        <option>IPhone 5s</option>
+                        <option>IPhone 6</option>
+                        <option>IPhone 6s</option>
+                    </select>
+                    break;
+                case "16":
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">315x260</p>
+                    break;
+                case "17":
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        <option>Металлический</option>
+                        <option>Акриловый</option>
+                    </select>
+                    <select style="display:none;">
+                        <option>Круглые</option>
+                        <option>Овальные</option>
+                        <option>Квадратные</option>
+                    </select>
+                    <select style="display:none;">
+                        <option>Квадрат 39x39</option>
+                        <option>Прямоугольник 39x48</option>
+                    </select>
+                    break;
+                case "18":
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        <option>65x65</option>
+                        <option>57x77</option>
+                        <option>85x63</option>
+                        <option>Овал</option>
+                        <option>Круг-4.1 диаметр</option>
+                    </select>
+                    break;
+                case "19":
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        <option>A - 4(12 элементов,20х25)</option>
+                        <option>А - 3(252 элементов,26х35)</option>
+                        <option>А - 4(120 элементов,20х29)</option>
+                        <option>А - 5(63 элемента,13х18)</option>
+                    </select>
+                    break;
+                case "21":
+                <!---->
+                    break;
+                case "22":
+                    <p class="infoCon col-md-5 selectpicker" data-live-search="true">18х22</p>
+                    break;
+                case "23":
+                    <select class="infoCon col-md-5 selectpicker" data-live-search="true">
+                        @for (int i = 20; i <= 100; i++)
+                        {
+                            for (int j = 20; j <= 200; j++)
+                            {
+                                <option>@i x @j</option>
+                            }
+                        }
+                    </select>
+                    break;
+
+            }
+    <input type="submit" value="Заказать" class="inputSub btn btn-warning col-md-2 col-md-offset-4"/>
+}
+        </div>
+
     </div>
         
 </div>

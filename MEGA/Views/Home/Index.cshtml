@@ -125,19 +125,19 @@
             <div class="row" style="margin:0">
                 <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">
                     <div class="col-md-4 col-xs-4 col-sm-4 news">
-                        <img class="pad" src="@ViewBag.News[0].Picture" alt="@ViewBag.News[0].Name" />
+                        <img class="pad" src="@Url.Content(ViewBag.News[0].Picture)" alt="@ViewBag.News[0].Name" />
                         <p class="col-md-2">@ViewBag.News[0].Name</p>
                     </div>
                 </a>
                 <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">
                     <div class="col-md-4 col-xs-4 col-sm-4 news">
-                        <img class="pad " src="@ViewBag.News[1].Picture" alt="@ViewBag.News[1].Name" />
+                        <img class="pad " src="@Url.Content(ViewBag.News[1].Picture)" alt="@ViewBag.News[1].Name" />
                         <p class="col-md-2">@ViewBag.News[1].Name</p>
                     </div>
                 </a>
                 <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">
                     <div class="col-md-4 col-xs-4 col-sm-4 news">
-                        <img class="pad" src="@ViewBag.News[1].Picture" alt="@ViewBag.News[1].Name" />
+                        <img class="pad" src="@Url.Content(ViewBag.News[1].Picture)" alt="@ViewBag.News[1].Name" />
                         <p class="col-md-2">@ViewBag.News[1].Name</p>
                     </div>
                 </a>
@@ -277,7 +277,7 @@
                                 <div class="col-md-3 portfolio-item">
                                     <div class="portfolio-one">
                                         <div class="portfolio-head">
-                                            <div class="portfolio-img"><img alt="" src="@item.Picture"></div>
+                                            <div class="portfolio-img"><img alt="" src="@Url.Content(@item.Picture)"></div>
                                             <div class="portfolio-hover">
 
                                             </div>
@@ -322,7 +322,7 @@
                                     <div class="col-md-3 portfolio-item">
                                         <div class="portfolio-one">
                                             <div class="portfolio-head">
-                                                <div class="portfolio-img"><img alt="" src="@item.Picture"></div>
+                                                <div class="portfolio-img"><img alt="" src="@Url.Content(@item.Picture)"></div>
                                                 <div class="portfolio-hover">
                                                     
                                                 </div>

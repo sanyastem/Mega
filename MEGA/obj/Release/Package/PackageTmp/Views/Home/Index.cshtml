@@ -123,12 +123,29 @@
         <div class="col-md-12 col-xs-12 col-sm-12">
             <h2 class="news-text">Новости</h2>
             <div class="row" style="margin:0">
-                <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">
+                @{
+                    int count = 0;
+                    foreach (var item in ViewBag.News)
+                    {
+                        <a href="@Url.Content("~/Home/NewsDitails/"+ item.Id)">
+                            <div class="col-md-4 col-xs-4 col-sm-4 news">
+                                <img class="pad" src="@Url.Content(item.Picture)" alt="@item.Name" style="height:304px;"/>
+                                <p class="col-md-12">@item.Name</p>
+                            </div>
+                        </a>
+                        count++;
+                        if (count ==3)
+                        {
+                            break;
+                        }
+                    }
+                }
+                <!--a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">
                     <div class="col-md-4 col-xs-4 col-sm-4 news">
                         <img class="pad" src="@Url.Content(ViewBag.News[0].Picture)" alt="@ViewBag.News[0].Name" />
                         <p class="col-md-2">@ViewBag.News[0].Name</p>
                     </div>
-                </a>
+                </!--a>
                 <a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[1].Id)">
                     <div class="col-md-4 col-xs-4 col-sm-4 news">
                         <img class="pad " src="@Url.Content(ViewBag.News[1].Picture)" alt="@ViewBag.News[1].Name" />
@@ -140,7 +157,7 @@
                         <img class="pad" src="@Url.Content(ViewBag.News[1].Picture)" alt="@ViewBag.News[1].Name" />
                         <p class="col-md-2">@ViewBag.News[1].Name</p>
                     </div>
-                </a>
+                </a-->
             </div>
             <div class="view"><a href="@Url.Content("~/Home/NewsAll/")">Читать все</a></div>
         </div>

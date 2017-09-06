@@ -110,7 +110,7 @@
 		jQuery('.tp-banner').revolution({
 			delay:5000,
 			startwidth:1170,
-			startheight:532,
+			startheight:560,
 			hideThumbs:200,
 			fullWidth:"off",
 			fullScreen:"off",

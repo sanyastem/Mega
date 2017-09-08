@@ -459,3 +459,4 @@ F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.xml
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.Addopis.resources
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.Addopis.resources
+D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.add_slider.resources

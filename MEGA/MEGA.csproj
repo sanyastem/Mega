@@ -236,6 +236,10 @@
     <Compile Include="Migrations\201708110932094_Add opis.Designer.cs">
       <DependentUpon>201708110932094_Add opis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709081059574_add_slider.cs" />
+    <Compile Include="Migrations\201709081059574_add_slider.Designer.cs">
+      <DependentUpon>201709081059574_add_slider.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -739,6 +743,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708110932094_Add opis.resx">
       <DependentUpon>201708110932094_Add opis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081059574_add_slider.resx">
+      <DependentUpon>201709081059574_add_slider.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

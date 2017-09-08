@@ -34,6 +34,7 @@ namespace MEGA.Models
         public DbSet<News> Newss { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

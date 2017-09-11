@@ -18,8 +18,11 @@ namespace DB
         public int? GoodsTypeId { get; set; }
         public GoodsType GoodsType { get; set; }
         public ICollection<Order> Orders { get; set; }
+        public int IdSlider { get; set; }
+        public ICollection<Slider> Slider { get; set; }
         public Product()
         {
+            Slider = new List<Slider>();
             Orders = new List<Order>();
         }
     }

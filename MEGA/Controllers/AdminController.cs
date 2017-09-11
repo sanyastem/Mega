@@ -66,6 +66,15 @@ namespace MEGA.Controllers
             }
             
         }
+        [HttpGet]
+        public ActionResult ProductsCreateAlbum()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.GoodsTypes.ToList());
+            }
+
+        }
         [HttpPost]
         public ActionResult ProductsCreate(Product pro, HttpPostedFileBase uploadImage)
         {
@@ -85,6 +94,34 @@ namespace MEGA.Controllers
                         context.SaveChanges();
                 }
                 return RedirectToAction("ProductAll");
+        }
+        [HttpPost]
+        public ActionResult ProductsCreateAlbum(Product pro, HttpPostedFileBase[] uploadImage)
+        {
+
+            if (uploadImage != null)
+            {
+                List<Slider> sls = new List<Slider>();
+                // получаем имя файла
+                for (int i = 0; i < uploadImage.Length; i++)
+                {
+                    
+                    string fileName = System.IO.Path.GetFileName(uploadImage[i].FileName);
+                    // сохраняем файл в папку Files в проекте
+                    uploadImage[i].SaveAs(Server.MapPath("~/Files/" + fileName));
+                    sls.Add(new Slider() {Image = "~/Files/" + fileName });
+                    
+                }
+                using (var context = new ApplicationDbContext())
+                {
+                    pro.Slider = sls;
+                    context.Products.Add(pro);
+                    context.SaveChanges();
+                }
+            }
+
+
+            return RedirectToAction("ProductAll");
         }
         public ActionResult ProductDelete(int id)
         {

@@ -7,13 +7,13 @@ namespace MEGA.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class add_slider : IMigrationMetadata
+    public sealed partial class add1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(add_slider));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(add1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709081059574_add_slider"; }
+            get { return "201709110931481_add1"; }
         }
         
         string IMigrationMetadata.Source

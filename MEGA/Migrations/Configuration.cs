@@ -19,30 +19,30 @@ namespace MEGA.Migrations
 
         protected override void Seed(MEGA.Models.ApplicationDbContext context)
         {
-            var types = new List<GoodsType>() {new GoodsType() { Id = 1, Name = "Фотографии стандартных форматов(фотохимическая печать)" },
-                new GoodsType() { Id = 2, Name = "Фото больших форматов(струйная печать)" },
-                new GoodsType() { Id = 3, Name = "Полиграфия(лазерная печать)" },
-                new GoodsType() { Id = 4, Name = "Фотокниги" },
-                new GoodsType() { Id = 5, Name = "Выпускные альбомы" },
-                new GoodsType() { Id = 6, Name = "Майки" },
-                new GoodsType() { Id = 7, Name = "Кружки" },
-                new GoodsType() { Id = 8, Name = "Тарелки" },
-                new GoodsType() { Id = 9, Name = "Копилки" },
-                new GoodsType() { Id = 10, Name = "Фартуки" },
-                new GoodsType() { Id = 11, Name = "Флажки" },
-                new GoodsType() { Id = 12, Name = "Подушки" },
-                new GoodsType() { Id = 13, Name = "Вымпелы" },
-                new GoodsType() { Id = 14, Name = "Часы" },
-                new GoodsType() { Id = 15, Name = "Чехлы для смартфонов" },
-                new GoodsType() { Id = 16, Name = "Сумки" },
-                new GoodsType() { Id = 17, Name = "Брелки" },
-                new GoodsType() { Id = 18, Name = "Магниты" },
-                new GoodsType() { Id = 19, Name = "Пазлы" },
-                new GoodsType() { Id = 20, Name = "Термос" },
-                new GoodsType() { Id = 21, Name = "Фляга" },
-                new GoodsType() { Id = 22, Name = "Коврик для мыши" },
-                new GoodsType() { Id = 23, Name = "Холст с натяжкой на подрамник" }};
-            context.GoodsTypes.AddRange(types);
+            //var types = new List<GoodsType>() {new GoodsType() { Id = 1, Name = "Фотографии стандартных форматов(фотохимическая печать)" },
+            //    new GoodsType() { Id = 2, Name = "Фото больших форматов(струйная печать)" },
+            //    new GoodsType() { Id = 3, Name = "Полиграфия(лазерная печать)" },
+            //    new GoodsType() { Id = 4, Name = "Фотокниги" },
+            //    new GoodsType() { Id = 5, Name = "Выпускные альбомы" },
+            //    new GoodsType() { Id = 6, Name = "Майки" },
+            //    new GoodsType() { Id = 7, Name = "Кружки" },
+            //    new GoodsType() { Id = 8, Name = "Тарелки" },
+            //    new GoodsType() { Id = 9, Name = "Копилки" },
+            //    new GoodsType() { Id = 10, Name = "Фартуки" },
+            //    new GoodsType() { Id = 11, Name = "Флажки" },
+            //    new GoodsType() { Id = 12, Name = "Подушки" },
+            //    new GoodsType() { Id = 13, Name = "Вымпелы" },
+            //    new GoodsType() { Id = 14, Name = "Часы" },
+            //    new GoodsType() { Id = 15, Name = "Чехлы для смартфонов" },
+            //    new GoodsType() { Id = 16, Name = "Сумки" },
+            //    new GoodsType() { Id = 17, Name = "Брелки" },
+            //    new GoodsType() { Id = 18, Name = "Магниты" },
+            //    new GoodsType() { Id = 19, Name = "Пазлы" },
+            //    new GoodsType() { Id = 20, Name = "Термос" },
+            //    new GoodsType() { Id = 21, Name = "Фляга" },
+            //    new GoodsType() { Id = 22, Name = "Коврик для мыши" },
+            //    new GoodsType() { Id = 23, Name = "Холст с натяжкой на подрамник" }};
+            //context.GoodsTypes.AddRange(types);
             var userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context));
 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));

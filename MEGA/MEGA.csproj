@@ -224,21 +224,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707060821284_MegaMigration.cs" />
-    <Compile Include="Migrations\201707060821284_MegaMigration.Designer.cs">
-      <DependentUpon>201707060821284_MegaMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201709110909545_add.cs" />
+    <Compile Include="Migrations\201709110909545_add.Designer.cs">
+      <DependentUpon>201709110909545_add.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707101140018_mega.cs" />
-    <Compile Include="Migrations\201707101140018_mega.Designer.cs">
-      <DependentUpon>201707101140018_mega.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201708110932094_Add opis.cs" />
-    <Compile Include="Migrations\201708110932094_Add opis.Designer.cs">
-      <DependentUpon>201708110932094_Add opis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709081059574_add_slider.cs" />
-    <Compile Include="Migrations\201709081059574_add_slider.Designer.cs">
-      <DependentUpon>201709081059574_add_slider.cs</DependentUpon>
+    <Compile Include="Migrations\201709110931481_add1.cs" />
+    <Compile Include="Migrations\201709110931481_add1.Designer.cs">
+      <DependentUpon>201709110931481_add1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -322,9 +314,11 @@
     <Content Include="Content\Constructor\images\hoodie\zip.png" />
     <Content Include="Content\Constructor\images\picture\highlights.png" />
     <Content Include="Content\Constructor\images\picture\img.png" />
+    <Content Include="Content\Constructor\images\picture\iphone.png" />
     <Content Include="Content\Constructor\images\picture\preview.png" />
     <Content Include="Content\Constructor\images\picture\брелок.jpg" />
     <Content Include="Content\Constructor\images\picture\брелок.png" />
+    <Content Include="Content\Constructor\images\picture\вымпел-внутри.png" />
     <Content Include="Content\Constructor\images\picture\вымпел.jpg" />
     <Content Include="Content\Constructor\images\picture\вымпел.png" />
     <Content Include="Content\Constructor\images\picture\коврик для мыши.png" />
@@ -335,8 +329,12 @@
     <Content Include="Content\Constructor\images\picture\пазлы.jpg" />
     <Content Include="Content\Constructor\images\picture\пазлы.png" />
     <Content Include="Content\Constructor\images\picture\подушка.png" />
+    <Content Include="Content\Constructor\images\picture\прям.png" />
+    <Content Include="Content\Constructor\images\picture\сумка-внутри.png" />
     <Content Include="Content\Constructor\images\picture\сумка.jpg" />
     <Content Include="Content\Constructor\images\picture\сумка.png" />
+    <Content Include="Content\Constructor\images\picture\тарелка-внутри.png" />
+    <Content Include="Content\Constructor\images\picture\тарелка-края.png" />
     <Content Include="Content\Constructor\images\picture\тарелка.jpg" />
     <Content Include="Content\Constructor\images\picture\тарелка.png" />
     <Content Include="Content\Constructor\images\picture\фартук.jpg" />
@@ -344,6 +342,7 @@
     <Content Include="Content\Constructor\images\picture\Флаг.png" />
     <Content Include="Content\Constructor\images\picture\холст.png" />
     <Content Include="Content\Constructor\images\picture\часы.jpg" />
+    <Content Include="Content\Constructor\images\picture\часы.png" />
     <Content Include="Content\Constructor\images\picture\чехол.jpg" />
     <Content Include="Content\Constructor\images\scoop_tee\basic.png" />
     <Content Include="Content\Constructor\images\scoop_tee\highlights.png" />
@@ -555,16 +554,47 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Files\-zXM13Ai41c[1].jpg" />
+    <Content Include="Files\4LQ5w_4xc8M[1].jpg" />
+    <Content Include="Files\81e076_044ad027a0544f80a279bb19558e56d2~mv2[1].jpg" />
+    <Content Include="Files\81e076_24e2055faf064680a945d31f19cbeab0~mv2[1].jpg" />
+    <Content Include="Files\81e076_5f8c56cf637a4a35b89fe512b42f790c[1].jpg" />
+    <Content Include="Files\81e076_8f145e518e9c4831a71b40efa157d0ab~mv2[1].jpg" />
+    <Content Include="Files\81e076_cf3840228b3b48bda21a01d60e05c653[1].jpg" />
+    <Content Include="Files\81e076_d33d1ba4fe5a4a10be029e851f6564bc~mv2[1].jpg" />
+    <Content Include="Files\81e076_f262620548f4456db6cea17b39385d4e~mv2[1].jpg" />
+    <Content Include="Files\81e076_f7273f1d664e43af898f785bc97edf37[1].jpg" />
+    <Content Include="Files\A4cLmgDvgck.jpg" />
+    <Content Include="Files\agwCeBzArI0[1].jpg" />
+    <Content Include="Files\AJNOE7kwABQ[1].jpg" />
     <Content Include="Files\ashes[1].jpg" />
     <Content Include="Files\Chrysanthemum.jpg" />
     <Content Include="Files\Desert.jpg" />
+    <Content Include="Files\eXGHGvaMPDE[1].jpg" />
+    <Content Include="Files\Fl968jYMAlo[1].jpg" />
+    <Content Include="Files\flvTB5znObo[1].jpg" />
+    <Content Include="Files\Hi00RvEB4f4[1].jpg" />
     <Content Include="Files\Hydrangeas.jpg" />
+    <Content Include="Files\ILhqu0SFnKA.jpg" />
     <Content Include="Files\img\services.jpg" />
+    <Content Include="Files\INQiDnRj3ew[1].jpg" />
     <Content Include="Files\Jellyfish.jpg" />
+    <Content Include="Files\k9Y1_zwQFP4[1].jpg" />
     <Content Include="Files\Koala.jpg" />
+    <Content Include="Files\KvZGGYsH6OI.jpg" />
+    <Content Include="Files\l3K7cuke1p4[1].jpg" />
     <Content Include="Files\Lighthouse.jpg" />
+    <Content Include="Files\logo.png" />
+    <Content Include="Files\MonANjKc60A[1].jpg" />
+    <Content Include="Files\n4Kb3TP1YOk[1].jpg" />
+    <Content Include="Files\NjGAY7uYSpg[1].jpg" />
     <Content Include="Files\Penguins.jpg" />
+    <Content Include="Files\TGtHmlm5pPU[1].jpg" />
     <Content Include="Files\Tulips.jpg" />
+    <Content Include="Files\vodonos.png" />
+    <Content Include="Files\WcS60TyyxwM[1].jpg" />
+    <Content Include="Files\xGC7FK8G7pc[1].jpg" />
+    <Content Include="Files\yhTvtVIVTAk[1].jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -716,6 +746,7 @@
     <Content Include="Views\Home\BasketAll.cshtml" />
     <Content Include="Views\Home\Constructor.cshtml" />
     <Content Include="Views\Home\AllDeteilsSuvenir.cshtml" />
+    <Content Include="Views\Admin\ProductsCreateAlbum.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -735,17 +766,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707060821284_MegaMigration.resx">
-      <DependentUpon>201707060821284_MegaMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709110909545_add.resx">
+      <DependentUpon>201709110909545_add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707101140018_mega.resx">
-      <DependentUpon>201707101140018_mega.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708110932094_Add opis.resx">
-      <DependentUpon>201708110932094_Add opis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709081059574_add_slider.resx">
-      <DependentUpon>201709081059574_add_slider.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709110931481_add1.resx">
+      <DependentUpon>201709110931481_add1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

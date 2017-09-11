@@ -131,7 +131,7 @@
                         <li>
                             @foreach (var item in ViewBag.one3)
                             {
-                                <a href="@Url.Content("~/Home/Ditails/"+item.Id)">
+                                <a href="@Url.Content("~/Home/Ditails/" + item.Id)">
                                     <div class="col-md-3 portfolio-item">
                                         <div class="portfolio-one">
                                             <div class="portfolio-head">
@@ -194,7 +194,7 @@
                                                         <div class="portfolio-content">
                                                             <i class="fa fa-leaf"></i>
                                                             <div class="portfolio-meta">
-                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat1[0].Id)">@ViewBag.pechat1[0].Name</a></h6></div>
+                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/" + ViewBag.pechat1[0].Id)">@ViewBag.pechat1[0].Name</a></h6></div>
 
                                                             </div><!-- End portfolio-meta -->
                                                         </div><!-- End portfolio-content -->
@@ -213,7 +213,7 @@
                                                         <div class="portfolio-content">
                                                             <i class="fa fa-leaf"></i>
                                                             <div class="portfolio-meta">
-                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat2[0].Id)">@ViewBag.pechat2[0].Name</a></h6></div>
+                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/" + ViewBag.pechat2[0].Id)">@ViewBag.pechat2[0].Name</a></h6></div>
 
                                                             </div><!-- End portfolio-meta -->
                                                         </div><!-- End portfolio-content -->
@@ -232,7 +232,7 @@
                                                         <div class="portfolio-content">
                                                             <i class="fa fa-leaf"></i>
                                                             <div class="portfolio-meta">
-                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat3[0].Id)">@ViewBag.pechat3[0].Name</a></h6></div>
+                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/" + ViewBag.pechat3[0].Id)">@ViewBag.pechat3[0].Name</a></h6></div>
 
                                                             </div><!-- End portfolio-meta -->
                                                         </div><!-- End portfolio-content -->
@@ -251,7 +251,7 @@
                                                         <div class="portfolio-content">
                                                             <i class="fa fa-leaf"></i>
                                                             <div class="portfolio-meta">
-                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/"+ViewBag.pechat3[0].Id)">@ViewBag.pechat3[0].Name</a></h6></div>
+                                                                <div class="portfolio-name"><h6><a href="@Url.Content("~/Home/AllDeteils/" + ViewBag.pechat3[0].Id)">@ViewBag.pechat3[0].Name</a></h6></div>
 
                                                             </div><!-- End portfolio-meta -->
                                                         </div><!-- End portfolio-content -->
@@ -290,7 +290,7 @@
                         <li>
                             @foreach (var item in ViewBag.one4)
                             {
-                                <a href="@Url.Content("~/Home/Ditails/"+item.Id)">
+                                <a href="@Url.Content("~/Home/Ditails/" + item.Id)">
                                     <div class="col-md-3 portfolio-item">
                                         <div class="portfolio-one">
                                             <div class="portfolio-head">
@@ -337,7 +337,7 @@
                         <li>
                             @for (int i = 5; i < ViewBag.suvenir.Count; i++)
                             {
-                                <a href="@Url.Content("~/Home/AllDeteilsSuvenir/"+ViewBag.suvenir[i].Id)">
+                                <a href="@Url.Content("~/Home/AllDeteilsSuvenir/" + ViewBag.suvenir[i].Id)">
                                     <div class="col-md-4">
                                         <div class="box-icon">
                                             <div class="box-icon-i box-icon-i-2"><i class="fa fa-heart"></i></div>
@@ -364,19 +364,20 @@
                     int count = 0;
                     foreach (var item in ViewBag.News)
                     {
-                        <a href="@Url.Content("~/Home/NewsDitails/"+ item.Id)">
+                        <a href="@Url.Content("~/Home/NewsDitails/" + item.Id)">
                             <div class="col-md-4 col-xs-4 col-sm-4 news">
                                 <img class="pad" src="@Url.Content(item.Picture)" alt="@item.Name" style="height:304px;" />
                                 <p class="col-md-12">@item.Name</p>
                             </div>
                         </a>
 
-                                count++;
-                                if (count == 3)
-                                {
-                                    break;
-                                }
+                            count++;
+                            if (count == 3)
+                            {
+                                break;
                             }
+                        }
+                    
                         }
                         <!--a href="@Url.Content("~/Home/NewsDitails/"+ ViewBag.News[0].Id)">
                         <div class="col-md-4 col-xs-4 col-sm-4 news">

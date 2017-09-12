@@ -3,7 +3,7 @@ namespace MEGA.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class add1 : DbMigration
+    public partial class add : DbMigration
     {
         public override void Up()
         {

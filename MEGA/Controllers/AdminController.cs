@@ -151,6 +151,46 @@ namespace MEGA.Controllers
             
         }
         [HttpGet]
+        public ActionResult ProductEditAlbum(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                Product b = context.Products.Find(id);
+                if (b == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(b);
+            }
+        }
+        [HttpPost]
+        public ActionResult ProductEditAlbum(Product product, HttpPostedFileBase[] uploadImage)
+        {
+            if (uploadImage != null)
+            {
+                List<Slider> sls = new List<Slider>();
+                // получаем имя файла
+                for (int i = 0; i < uploadImage.Length; i++)
+                {
+
+                    string fileName = System.IO.Path.GetFileName(uploadImage[i].FileName);
+                    // сохраняем файл в папку Files в проекте
+                    uploadImage[i].SaveAs(Server.MapPath("~/Files/" + fileName));
+                    sls.Add(new Slider() { Image = "~/Files/" + fileName });
+
+                }
+                using (var context = new ApplicationDbContext())
+                {
+                    product.Slider = sls;
+                    context.Entry(product).State = EntityState.Modified;
+                    context.SaveChanges();
+                    
+                }
+            }
+            return RedirectToAction("ProductAll");
+
+        }
+        [HttpGet]
         public ActionResult ProductEdit(int id)
         {
             using (var context = new ApplicationDbContext())

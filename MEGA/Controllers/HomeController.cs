@@ -70,6 +70,8 @@ namespace MEGA.Controllers
         {
             using (var context = new ApplicationDbContext())
             {
+                string query = string.Format("SELECT * FROM Sliders WHERE Product_id = '"+ id +"'");
+                ViewBag.Slider = context.Sliders.SqlQuery(query).ToList();
                 return View(context.Products.Where(x=>x.Id == id).ToList());
             }
             

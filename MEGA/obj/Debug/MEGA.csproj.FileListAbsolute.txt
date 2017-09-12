@@ -331,8 +331,6 @@ D:\GitHub\mega\MEGA\bin\PagedList.dll
 D:\GitHub\mega\MEGA\bin\PagedList.Mvc.dll
 D:\GitHub\mega\MEGA\bin\PagedList.xml
 D:\GitHub\mega\MEGA\bin\PagedList.Mvc.xml
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.MegaMigration.resources
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\1\Mega\MEGA\bin\ApplicationInsights.config
 D:\1\Mega\MEGA\bin\roslyn\csc.exe
 D:\1\Mega\MEGA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -448,14 +446,13 @@ D:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.MegaMigration.resources
 D:\1\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\1\Mega\MEGA\obj\Debug\MEGA.dll
 D:\1\Mega\MEGA\obj\Debug\MEGA.pdb
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
 d:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
 F:\GitHub\Mega\MEGA\bin\PagedList.dll
 F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.dll
 F:\GitHub\Mega\MEGA\bin\PagedList.xml
 F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.xml
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.Addopis.resources
-D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.add_slider.resources
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.add1.resources
+D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
+D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache

@@ -442,11 +442,9 @@ D:\1\Mega\MEGA\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 D:\1\Mega\MEGA\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 D:\1\Mega\MEGA\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 D:\1\Mega\MEGA\obj\Debug\MEGA.csprojResolveAssemblyReference.cache
-D:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.MegaMigration.resources
 D:\1\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\1\Mega\MEGA\obj\Debug\MEGA.dll
 D:\1\Mega\MEGA\obj\Debug\MEGA.pdb
-d:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.mega.resources
 F:\GitHub\Mega\MEGA\bin\PagedList.dll
 F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.dll
 F:\GitHub\Mega\MEGA\bin\PagedList.xml
@@ -455,3 +453,4 @@ F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
+d:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.add.resources

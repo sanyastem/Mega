@@ -35,15 +35,19 @@
     color:#fff;
     }
     .click{
-        border:1px solid red;
+        
             float: right;
             width:20%;
+    }
+    .clickred{
+        border:1px solid red;
     }
     .click img{
         height: 92px;
         width: 92px;
     }
 </style>
+
 <div class="sections section-2" id="fotopech">
     <div class="container">
         <div class="row">
@@ -53,7 +57,7 @@
                     @foreach (var item in ViewBag.Slider)
                     {
                     <div class="click">
-                        <a href=""><img src="@Url.Content(item.Image)" alt="Alternate Text" /></a>
+                        <a href="#"><img src="@Url.Content(item.Image)" alt="Alternate Text" /></a>
                     </div>
                     }
                 </div>
@@ -75,3 +79,10 @@
     </div>
 </div>
 
+
+<script>
+    $('.click a img').click(function () {
+        $('.img-product').attr('src', $(this).attr('src'));
+        $('.click').toggleClass('clickred');
+    });
+</script>

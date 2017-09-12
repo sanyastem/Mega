@@ -453,6 +453,5 @@ F:\GitHub\Mega\MEGA\bin\PagedList.xml
 F:\GitHub\Mega\MEGA\bin\PagedList.Mvc.xml
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
 F:\GitHub\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
-F:\GitHub\Mega\MEGA\obj\Debug\MEGA.Migrations.add1.resources
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache

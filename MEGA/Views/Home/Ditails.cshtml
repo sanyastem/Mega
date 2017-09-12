@@ -37,7 +37,9 @@
     .click{
         float: left;
         margin-right: 10px;
-        width:100px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
     }
     .clickred{
         border:1px solid red;
@@ -107,7 +109,7 @@
                 minHeight = height;
         }
 
-        $(".click img").height(minHeight);
+        $(".click").height(minHeight);
 
 
 

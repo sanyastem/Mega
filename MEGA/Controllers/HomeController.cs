@@ -209,8 +209,10 @@ namespace MEGA.Controllers
         }
         public ActionResult Client()
         {
-
-            return View();
+            using (var context = new ApplicationDbContext())
+            {
+                return View(context.GoodsTypes.ToList());
+            }
         }
     }
 }

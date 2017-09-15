@@ -9,18 +9,15 @@
         width: 50%;
     }
     .block-img{
-        float:left;
-        width: 50%;
+
     }
     .block-txt{
-        float:right;
-        width: 50%;
+
     }
     h1{
         color:red;
     }
     .text-target{
-        float: left;
         color: red !important;
         border-color: red !important;
             height: 45px;
@@ -63,10 +60,11 @@
 <div class="sections section-2" id="fotopech">
     <div class="container">
         <div class="row">
+            <h1 style="text-align:center;">@Model[0].Name</h1>
             <div class="block-img">
             <div class="image-details"><img class="img-product" src="@Url.Content(Model[0].Picture)" alt="@Model[0].Name" /></div>
                 
-                <div class="col-md-12">
+                <div class="col-md-offset-2">
                     @foreach (var item in ViewBag.Slider)
                     {
                     <div class="click" style="height: 0;">
@@ -75,15 +73,13 @@
                     }
                 </div>
             </div>
-            <div class="block-txt">
-
-                <h1>@Model[0].Name</h1>
-                <p>@Model[0].Information</p>
-                <p>@Model[0].Price  бел.руб.</p>
+            <div class="block-txt col-md-12" style="text-align:center;">
+                <p style="margin-top: 25px;">@Model[0].Information</p>
+                <p style="font-size: 20px;color: #000;">@Model[0].Price  бел.руб.</p>
                 <div>
 
                     <form action="@Url.Content("~/Home/Basket/"+ Model[0].Id)" method="post">
-                        <input class="text-target" type="number" min="1" name="col" value="1" style="float: left;"/>
+                        <input class="text-target" type="number" min="1" name="col" value="1" />
                         <input class="submit-forms" type="submit"  value="Добавить в корзину" style="margin-left: 25px;"/>
                     </form>
                 </div>

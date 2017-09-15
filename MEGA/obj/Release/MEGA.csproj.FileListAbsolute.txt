@@ -109,12 +109,9 @@ D:\GitHub\mega\MEGA\bin\ru\Microsoft.Owin.Security.Google.resources.dll
 D:\GitHub\mega\MEGA\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
 D:\GitHub\mega\MEGA\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 D:\GitHub\mega\MEGA\obj\Release\MEGA.csprojResolveAssemblyReference.cache
-D:\GitHub\mega\MEGA\obj\Release\MEGA.Migrations.MegaMigration.resources
 D:\GitHub\mega\MEGA\obj\Release\MEGA.csproj.GenerateResource.Cache
 D:\GitHub\mega\MEGA\obj\Release\MEGA.dll
 D:\GitHub\mega\MEGA\obj\Release\MEGA.pdb
-D:\GitHub\mega\MEGA\obj\Release\MEGA.Migrations.mega.resources
-D:\GitHub\mega\MEGA\obj\Release\MEGA.Migrations.Addopis.resources
 F:\GitHub\Mega\MEGA\bin\ApplicationInsights.config
 F:\GitHub\Mega\MEGA\bin\roslyn\csc.exe
 F:\GitHub\Mega\MEGA\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -232,3 +229,4 @@ F:\GitHub\Mega\MEGA\obj\Release\MEGA.Migrations.Addopis.resources
 F:\GitHub\Mega\MEGA\obj\Release\MEGA.csproj.GenerateResource.Cache
 F:\GitHub\Mega\MEGA\obj\Release\MEGA.dll
 F:\GitHub\Mega\MEGA\obj\Release\MEGA.pdb
+D:\GitHub\mega\MEGA\obj\Release\MEGA.Migrations.add.resources

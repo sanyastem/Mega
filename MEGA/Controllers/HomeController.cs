@@ -207,6 +207,10 @@ namespace MEGA.Controllers
             }
             return RedirectToAction("BasketAll");
         }
+        public ActionResult Client()
+        {
 
+            return View();
+        }
     }
 }

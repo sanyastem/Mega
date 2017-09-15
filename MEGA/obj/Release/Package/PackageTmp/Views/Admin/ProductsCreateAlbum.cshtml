@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DB.GoodsType>
+
+@{
+    ViewBag.Title = "Добавление товара";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="top" class="one dark cover">
+    <div class="container">
+        <header>
+            <h2 class="alt">Добавление товара</h2>
+
+        </header>
+
+        @using (Html.BeginForm("ProductsCreateAlbum", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+
+            <p>Тип товара</p>
+            <select name="GoodsTypeId">
+
+
+                @foreach (var item in Model)
+                {
+                    <option value="@item.Id">@item.Name</option>
+
+                }
+            </select>
+            <p>Название товара</p>
+            <input type="text" name="Name" />
+            <p>Описание товара</p>
+            <textarea name="Information"></textarea>
+            <p>Фото товара 1</p>
+            <input type="file" name="uploadImage" />
+            <p>Фото товара 2</p>
+            <input type="file" name="uploadImage" />
+            <p>Фото товара 3</p>
+            <input type="file" name="uploadImage" />
+            <p>Фото товара 4</p>
+            <input type="file" name="uploadImage" />
+            <p>Фото товара 5</p>
+            <input type="file" name="uploadImage" />
+            <p>Цена товара</p>
+            <input type="text" name="Price" />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Сохранить" class="btn btn-default" />
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Назад", "ProductAll")
+        </div>
+
+    </div>
+</section>

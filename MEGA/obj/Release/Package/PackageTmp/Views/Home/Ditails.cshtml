@@ -34,12 +34,46 @@
     border:none;
     color:#fff;
     }
+    .click{
+        float: left;
+        margin-right: 10px;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+    }
+    .clickred{
+        border:1px solid red;
+    }
+    .click img{
+
+    }
+
+    .image-details{
+        width: 510px;
+        margin: 0 auto 20px auto;
+    }
+
+    .img-product{
+        width: auto;
+        height: 400px;
+    }
+
 </style>
+
 <div class="sections section-2" id="fotopech">
     <div class="container">
         <div class="row">
             <div class="block-img">
-                <img class="img-product" src="@Url.Content(Model[0].Picture)" alt="@Model[0].Name" />
+            <div class="image-details"><img class="img-product" src="@Url.Content(Model[0].Picture)" alt="@Model[0].Name" /></div>
+                
+                <div class="col-md-12">
+                    @foreach (var item in ViewBag.Slider)
+                    {
+                    <div class="click">
+                        <a href="#"><img src="@Url.Content(item.Image)" alt="Alternate Text" /></a>
+                    </div>
+                    }
+                </div>
             </div>
             <div class="block-txt">
 
@@ -58,3 +92,35 @@
     </div>
 </div>
 
+
+<script>
+    $('.click a img').click(function () {
+        $('.img-product').attr('src', $(this).attr('src'));
+        //$('.click').toggleClass('clickred');
+    });
+
+
+    $(document).ready(function () {
+        var count = $('.click img').length;
+        var minHeight = 10000;
+        for (var i = 0; i < count; i++) {
+            var height = $($('.click img')[i]).height();
+            if (minHeight > height)
+                minHeight = height;
+        }
+
+        $(".click").height(minHeight);
+
+
+
+        var count = $('.item2').length;
+        var maxHeight = 0;
+        for (var i = 0; i < count; i++) {
+            var height = $($('.item2')[i]).height();
+            if (maxHeight < height)
+                maxHeight = height;
+        }
+
+        $(".item2").height(maxHeight);
+    });
+</script>

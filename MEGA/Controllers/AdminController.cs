@@ -176,12 +176,12 @@ namespace MEGA.Controllers
                     string fileName = System.IO.Path.GetFileName(uploadImage[i].FileName);
                     // сохраняем файл в папку Files в проекте
                     uploadImage[i].SaveAs(Server.MapPath("~/Files/" + fileName));
-                    sls.Add(new Slider() { Image = "~/Files/" + fileName });
+                    product.Slider.Add(new Slider() { Image = "~/Files/" + fileName });
 
                 }
                 using (var context = new ApplicationDbContext())
                 {
-                    product.Slider = sls;
+                    context.Sliders.AddRange(product.Slider);
                     context.Entry(product).State = EntityState.Modified;
                     context.SaveChanges();
                     

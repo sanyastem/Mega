@@ -454,3 +454,4 @@ F:\GitHub\Mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
 D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.GenerateResource.Cache
 d:\1\Mega\MEGA\obj\Debug\MEGA.Migrations.add.resources
+D:\GitHub\mega\MEGA\obj\Debug\MEGA.csproj.CoreCompileInputs.cache
